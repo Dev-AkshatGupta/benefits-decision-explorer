@@ -5,6 +5,10 @@ import { navigation } from './navigation';
 import { NotFoundPage } from './not-found-page';
 import { RouteErrorPage } from './route-error-page';
 import { PatientWorklistRoute, PatientProfileRoute } from './patient-routes';
+import {
+  EligibilityRoute,
+  EligibilitySimulatorRoute,
+} from './eligibility-route';
 export const appRoutes: RouteObject[] = [
   {
     path: '/',
@@ -14,8 +18,19 @@ export const appRoutes: RouteObject[] = [
       { index: true, element: <Navigate to="/dashboard" replace /> },
       { path: 'patients', Component: PatientWorklistRoute },
       { path: 'patients/:patientId', Component: PatientProfileRoute },
+      { path: 'eligibility', Component: EligibilityRoute },
+      { path: 'eligibility/simulator', Component: EligibilitySimulatorRoute },
       ...navigation
-        .filter((page) => !(['/patients'] as string[]).includes(page.path))
+        .filter(
+          (page) =>
+            !(
+              [
+                '/patients',
+                '/eligibility',
+                '/eligibility/simulator',
+              ] as string[]
+            ).includes(page.path),
+        )
         .map((page) => ({
           path: page.path.slice(1),
           element: <PlaceholderPage page={page} />,

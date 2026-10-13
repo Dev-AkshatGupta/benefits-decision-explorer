@@ -34,6 +34,7 @@ import { ProfileEditor } from '../components/profile/profile-editor';
 import { MembersEditor } from '../components/profile/members-editor';
 import { IncomeEditor } from '../components/profile/income-editor';
 import { UnsavedChangesDialog } from '../components/profile/unsaved-changes-dialog';
+import { screeningReturnPath } from '@/features/eligibility/ui/screening-url';
 type Editing = 'profile' | 'members' | 'income' | null;
 export function PatientDetailPage() {
   const { patientId = '' } = useParams(),
@@ -121,7 +122,11 @@ export function PatientDetailPage() {
     >
       <PageContainer>
         <Button asChild variant="outline" className="mb-7">
-          <Link to={worklistReturnPath(state)}>← Back to patients</Link>
+          <Link to={screeningReturnPath(state) ?? worklistReturnPath(state)}>
+            {screeningReturnPath(state)
+              ? '← Back to screening'
+              : '← Back to patients'}
+          </Link>
         </Button>
         {notice && (
           <p

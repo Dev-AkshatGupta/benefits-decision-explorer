@@ -6,6 +6,7 @@ import { navigation } from '@/app/router/navigation';
 import { Button } from '@/components/ui/button';
 import { AppSidebar } from './app-sidebar';
 import { AppHeader } from './app-header';
+import { ScreeningSessionProvider } from '@/features/eligibility/ui/screening-session-provider';
 export function AppLayout() {
   const [collapsed, setCollapsed] = useState(
     () => !window.matchMedia('(min-width: 1024px)').matches,
@@ -49,7 +50,9 @@ export function AppLayout() {
           />
           <div className="min-h-0 flex-1 overflow-y-auto">
             <main id="main-content" tabIndex={-1}>
-              <Outlet />
+              <ScreeningSessionProvider>
+                <Outlet />
+              </ScreeningSessionProvider>
             </main>
             <footer className="mx-auto max-w-6xl px-5 pb-6 pt-2 text-xs leading-6 text-muted-foreground sm:px-7 lg:px-10">
               Benefits Decision Explorer is an independent demonstration
