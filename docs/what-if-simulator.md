@@ -1,6 +1,6 @@
-# What-if Eligibility Simulator (Step 9)
+# What-if eligibility simulator
 
-Explore What-if Scenarios opens /eligibility/simulator?patientId=patient-011 from an existing screening. Simulation Mode — Changes are not saved to the patient profile is displayed throughout the workspace. All outcomes use fictional demonstration policies and do not guarantee benefit approval or denial.
+The **Explore what-if scenarios** action opens `/eligibility/simulator?patientId=patient-011` from a screening result. A persistent notice explains that simulated changes are not saved to the patient profile. All outcomes use fictional demonstration policies and do not determine whether someone will receive benefits.
 
 ## Baseline and local state
 
@@ -38,28 +38,13 @@ The hook separates raw draft validation from evaluation. Valid minimal overrides
 
 Comparison functions match program and rule identifiers and reject incompatible patients, dates, versions, rule sets, or configured operands. Status changes use actual engine statuses. A rule whose actual value moves but whose pass/fail/unknown outcome stays the same is not counted as changed. The impact summary counts evaluated, changed/unchanged programs, and outcome-changing rules.
 
-Every program card displays baseline/simulated statuses and rule counts, with explicit transition text or No status change. Expandable rule differences show before/after values and statuses, unchanged configured thresholds/operators, policy references, and the simulated engine explanation. Formatting and status badges reuse Step 8 utilities. Scenario Changes lists only inputs that differ from the baseline. No human-readable explanation is parsed to infer data or decisions.
+Every program card displays baseline/simulated statuses and rule counts, with explicit transition text or No status change. Expandable rule differences show before/after values and statuses, unchanged configured thresholds/operators, policy references, and the simulated engine explanation. Formatting and status badges reuse shared presentation utilities. Scenario Changes lists only inputs that differ from the baseline. No human-readable explanation is parsed to infer data or decisions.
 
 ## Integrity, accessibility, and layout
 
 Simulation modules import read-only records only for the missing-baseline review. The active workspace has no patient/household mutation hook or write API. Baseline objects remain frozen and saved repository records are never touched. Engine results are derived synchronous values, not persisted server state.
 
 Desktop uses two columns for inputs and impact; mobile stacks them. Labels distinguish baseline, hypothetical inputs, and simulation output. Native inputs/selectors and details/summary controls support the keyboard, visible focus states, textual status transitions, accessible errors, and a polite impact announcement. No charts, workers, animation framework, or additional dependency is introduced.
-
-## Files
-
-Created under src/features/eligibility/simulator:
-
-- domain/simulation.ts and simulation.test.ts: validation, context overrides, exact income differences, result comparison.
-- hooks/use-eligibility-simulation.ts: local draft and synchronous derived evaluation.
-- components/simulation-inputs.tsx and simulation-impact.tsx: inputs, changes, summaries, program/rule comparisons.
-- pages/eligibility-simulator-page.tsx and eligibility-simulator-page.test.tsx: session-aware workspace and direct-link handling.
-
-Also created e2e/simulator.spec.ts and this guide.
-
-Modified src/features/eligibility/ui/screening-snapshot.ts, src/features/eligibility/pages/eligibility-page.tsx, src/app/router/{eligibility-route,routes}.tsx, src/app/layouts/app-layout.tsx, package.json, README.md, and docs/decision-inspector.md. The Step 6 engine, patient domain schemas, mock APIs, and saved-record query hooks were not modified. No dependencies were added.
-
-Browser regression checks exposed a preexisting worklist search issue: committing a debounced URL search remounted the input, interrupting continued typing. The narrow fix retains the input node and newer draft text for its own commits, while still synchronizing external URL navigation. Also modified src/features/patients/components/patient-search.tsx, patient-search.test.tsx, src/features/patients/pages/patients-page.tsx, and e2e/patients.spec.ts. Controlled timer tests verify debounce, immediate clear, focus retention, and URL synchronization; the browser assertion no longer assumes inter-character scheduling stays below the debounce interval under CPU load.
 
 ## Verification commands
 
@@ -81,4 +66,4 @@ Final verification: typecheck, ESLint, formatting, and production build passed. 
 
 Scenarios are aggregate assumptions, not complete synthetic household reconstructions. Evaluation date and policy versions are fixed. Only five existing context fields can be overridden. Saved source arrays are not changed to match hypothetical income. Child presence is boolean, with the consistency limits described above. No changes are persisted; refresh or route exit loses the draft.
 
-Policy comparison, bulk impact analysis, scenario history/sharing, government rules, task/coverage integration, new backend services, and generative AI predictions remain deferred.
+Permanent scenario history, official policy integrations, application submission, authentication, and a production backend are outside the current workflow.

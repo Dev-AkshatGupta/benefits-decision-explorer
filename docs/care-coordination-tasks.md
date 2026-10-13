@@ -1,4 +1,4 @@
-# Care Coordination & Task Management — Step 11
+# Care coordination tasks
 
 This independent portfolio application uses synthetic patients, coordinators and tasks. It is not affiliated with ITO Health. Tasks do not contact people, enroll patients, change eligibility/coverage, or represent actual government benefit decisions.
 
@@ -58,56 +58,13 @@ Due dates are validated `YYYY-MM-DD` strings. The UI derives today from local ca
 
 Comparisons are date-only. UTC calendar arithmetic is used solely to add calendar days to a date string, never to convert a due date into a local instant or compare it to UTC midnight. Tests cover leap day, month/year boundaries and terminal tasks. Created/updated/completed instants remain UTC ISO timestamps, consistently formatted with the existing utilities.
 
-## Files created
-
-```text
-src/features/tasks/
-  domain/tasks.ts
-  domain/tasks.test.ts
-  api/tasks-api.ts
-  api/task-queries.ts
-  api/tasks-api.test.ts
-  hooks/use-local-today.ts
-  hooks/use-dialog-focus.ts
-  components/task-list.tsx
-  components/task-editor.tsx
-  components/task-details.tsx
-  components/patient-tasks-section.tsx
-  components/eligibility-follow-up.tsx
-  pages/tasks-page.tsx
-  pages/tasks-page.test.tsx
-src/mocks/data/tasks.ts
-src/mocks/handlers/tasks.ts
-src/app/router/tasks-route.tsx
-e2e/tasks.spec.ts
-docs/care-coordination-tasks.md
-```
-
-## Files modified
-
-```text
-src/mocks/data/database.ts
-src/mocks/handlers/index.ts
-src/app/router/routes.tsx
-src/features/patients/api/patient-queries.ts
-src/features/patients/components/patient-search.tsx
-src/features/patients/pages/patient-detail-page.tsx
-src/features/eligibility/components/patient-selector.tsx
-src/features/eligibility/pages/eligibility-page.tsx
-src/test/app.test.tsx
-e2e/smoke.spec.ts
-README.md
-```
-
-The existing debounced search receives optional labels/placeholders while retaining default patient behavior. Patient selector buttons now explicitly use `type="button"` so selection/pagination inside a form cannot accidentally submit it. Route heading assertions match the new task page title. The existing eligibility engine and policy definitions are unchanged.
-
 ## Verification and limitations
 
 Run `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`, `npm run format:check` and `npm run test:e2e`. Use Node 24. For an installed Chrome on Windows, set `$env:PLAYWRIGHT_CHANNEL = 'chrome'` before browser tests.
 
 Domain/API/UI tests exercise validation, reference integrity, all allowed/rejected status pairs, completion and reopening, due classification, repository reset, idempotency, duplicate screening follow-ups, filtering/sorting/pagination, concurrency, preserved drafts, status actions, patient integration and reviewed eligibility creation. Playwright covers the complete creation/assignment/completion/profile journey and screening-follow-up/reopen journey on desktop and mobile, including global metric changes, narrow layout overflow and runtime console errors.
 
-Tasks and idempotency records persist only in the current MSW session, and reload resets fixtures. Production still does not start MSW and needs a matching API to run data workflows; no backend is added. There are no real notifications/outreach, authentication/permissions, automated renewals, external integrations, permanent audit logs or enrollment workflows. Recently completed records are a current task view, not a historical audit trail. Browser/keyboard checks do not substitute for a full assistive-technology audit.
+Task and idempotency records live in the current MSW session, and reload restores fixtures. Development and the standalone demo start MSW; ordinary production builds need a compatible API. There are no real notifications or outreach, authentication or permissions, automated renewals, external integrations, permanent audit logs, or enrollment workflows. Recently completed records are a current task view, not a historical audit trail. Browser and keyboard checks do not substitute for a full assistive-technology audit.
 
 Final verification, October 9, 2026, using Node 24:
 
@@ -116,7 +73,7 @@ Final verification, October 9, 2026, using Node 24:
 | TypeScript                          | Passed                                                                      |
 | ESLint, zero warnings               | Passed                                                                      |
 | Full Vitest suite                   | 413 tests passed across 26 files                                            |
-| Step 11 domain/API/UI tests         | 35 passed                                                                   |
+| Task domain/API/UI tests            | 35 passed                                                                   |
 | Production build                    | Passed                                                                      |
 | Prettier                            | Passed                                                                      |
 | Full Playwright regression suite    | 32 passed; 4 existing duplicate viewport tests intentionally skipped        |
@@ -124,4 +81,4 @@ Final verification, October 9, 2026, using Node 24:
 | Task browser console/runtime errors | None                                                                        |
 | Desktop/mobile visual review        | Passed; no document-level horizontal overflow in tested flows               |
 
-All requested verification commands could be executed. No dependencies were added or upgraded. Step 11 stops at task management; other deferred workflows remain unchanged.
+All requested verification commands could be executed. No dependencies were added or upgraded. Task records and follow-ups remain part of the synthetic demonstration environment.

@@ -1,4 +1,4 @@
-# Policy comparison and population impact (Step 10)
+# Policy comparison and population impact
 
 All policies, monetary thresholds, and records are fictional demonstrations. Results are decision support, never official government eligibility determinations. No enrollment, policy publishing, task management, real backend, AI decisions, or persistent analysis history is added.
 
@@ -6,7 +6,7 @@ All policies, monetary thresholds, and records are fictional demonstrations. Res
 
 Open `/policies`, explicitly select a program and two distinct versions, choose one evaluation date, review structural rule changes, then run analysis. Health, Nutrition and Family Assistance each have 2025.1 and 2026.1 versions. Childcare and Housing clearly report that only one version exists. Swap reverses direction. No version is chosen automatically.
 
-The URL preserves program, baseline, comparison, date, transition, sort, page and selected patient. It contains identifiers, never patient contexts or income. Matrix counts filter patients, including unchanged diagonal cells. The table initially shows changed statuses, sorts by name in either direction, and renders ten patients per page. Mobile uses cards. One modal inspector displays captured engine traces from both policies, including old/new values, unknown values and absent rules. It reuses Step 8's `RuleComparison`, `DecisionStatus`, formatting and decision-summary utilities. Step 9's same-policy simulator comparison cannot compare different policy versions; this feature shares engine and presentation semantics instead of weakening that contract.
+The URL preserves program, baseline, comparison, date, transition, sort, page and selected patient. It contains identifiers, never patient contexts or income. Matrix counts filter patients, including unchanged diagonal cells. The table initially shows changed statuses, sorts by name in either direction, and renders ten patients per page. Mobile uses cards. One modal inspector displays captured engine traces from both policies, including old/new values, unknown values and absent rules. It reuses the Decision Inspector's `RuleComparison`, `DecisionStatus`, formatting and decision-summary utilities. The same-policy simulator comparison cannot compare different policy versions; this feature shares engine and presentation semantics instead of weakening that contract.
 
 Profile navigation preserves sanitized comparison/filter parameters. Leaving this page discards its in-memory analysis; returning requires a fresh run. Comparison and inspection never modify saved records. Native selectors, semantic matrix/table headers, text statuses, live summaries, focusable cells, Radix focus trapping/restoration and existing reduced-motion styles support accessibility.
 
@@ -34,7 +34,7 @@ For P patients, R combined rules and bounded operands, analysis is approximately
 
 Each immutable analysis captures policies, evaluation date, normalized contexts, names, evaluations, population fingerprint, timestamp and measured duration. Snapshots stay in component memory. URL changes never relabel old results. Selection/date changes mark results outdated and request a rerun. `GET /api/policy-population/version` checks the identifier every 15 seconds while results are mounted and on focus; patient and household mutations immediately invalidate the query. Freshness API errors explicitly report unverified freshness with retry.
 
-The fingerprint uses canonical sorted-key encoding and 64-bit FNV-1a over eligibility-relevant records plus repository update timestamps. It is a deterministic noncryptographic change detector, not a security token/audit signature. Inspectors continue reading the original captured snapshot after data changes. Current data has 150 patients. Batch contracts cap at 2,000; larger datasets require a paged snapshot contract/bounded batches and are deferred, never silently truncated. Production still does not start MSW and requires a matching API; no production backend is introduced.
+The fingerprint uses canonical sorted-key encoding and 64-bit FNV-1a over eligibility-relevant records plus repository update timestamps. It is a deterministic noncryptographic change detector, not a security token or audit signature. Inspectors continue reading the original captured snapshot after data changes. Current data has 150 patients. Batch contracts cap at 2,000; larger datasets require a paged snapshot contract and bounded batches rather than silently truncating. Development and the standalone demo start MSW; ordinary production builds need a matching API.
 
 ## Actual sample and benchmark
 
@@ -53,53 +53,6 @@ Fresh default dataset, Family Assistance 2025.1 → 2026.1, June 15, 2026:
 
 `npm run bench:policies` prints this fixture result and benchmarks pure analysis and normalization plus analysis. Initial Node 24 run on this machine: mean 18.67 ms pure analysis (54 samples, ±2.21%); mean 23.23 ms including normalization (44 samples, ±2.18%). These exclude fetch/fingerprint/rendering and vary by environment. The page reports normalization/analysis duration separately.
 
-## Files
-
-Created:
-
-```text
-src/features/policies/
-  api/population-api.ts
-  components/patient-impact-inspector.tsx
-  components/population-dashboard.tsx
-  components/rule-differences.tsx
-  domain/policy-diff.ts
-  domain/population.ts
-  domain/policies.test.ts
-  domain/population.bench.ts
-  hooks/use-population-impact.ts
-  pages/policies-page.tsx
-  pages/policies-page.test.tsx
-  ui/policy-url.ts
-src/app/router/policies-route.tsx
-src/mocks/data/policy-population.ts
-src/mocks/handlers/policy-population.ts
-e2e/policies.spec.ts
-vitest.policies.config.ts
-docs/policy-impact-analysis.md
-```
-
-Modified:
-
-```text
-src/app/router/routes.tsx
-src/features/eligibility/engine/context-builder.ts
-src/features/eligibility/engine/evaluate-program.ts
-src/features/eligibility/policies/demo-programs.ts
-src/features/eligibility/policies/registry.ts
-src/features/patients/api/patient-queries.ts
-src/features/patients/pages/patient-detail-page.tsx
-src/mocks/handlers/index.ts
-src/test/app.test.tsx
-e2e/smoke.spec.ts
-package.json
-vite.config.ts
-README.md
-docs/eligibility-engine.md
-```
-
-Changes connect routes, export existing context schemas, add explicit evaluator applicability, register historical policies and batch handlers, invalidate freshness after patient/household edits, preserve profile return links, update heading assertions, add scripts and exclude benchmark code from unit coverage. No dependencies added/upgraded.
-
 ## Verification commands
 
 Run `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`, `npm run format:check`, `npm run test:policies:coverage`, and `npm run test:e2e`. Playwright exercises desktop/mobile comparison, actual changed values, all-population analysis, matrix filtering, inspection, swapping/rerunning, pagination, focus restoration and narrow viewport overflow. Unit tests cover semantic differences, all transitions, reconciliation, identical contexts/dates, invalid records, input integrity, determinism, API errors, empty results, stale snapshots and profile return navigation.
@@ -111,8 +64,8 @@ Final verification on Node 24, October 9, 2026:
 | TypeScript                   | Passed                                                                  |
 | ESLint, zero warnings        | Passed                                                                  |
 | Full Vitest suite            | 378 tests, 23 files passed                                              |
-| Step 10 tests                | 39 tests passed                                                         |
-| Step 10 coverage             | 97.38% statements, 84.56% branches, 98% lines                           |
+| Population analysis tests    | 39 tests passed                                                         |
+| Population analysis coverage | 97.38% statements, 84.56% branches, 98% lines                           |
 | Structural diff coverage     | 100% statements and branches                                            |
 | Population analysis coverage | 100% statements, 88.37% branches                                        |
 | Production build             | Passed; lazy policy-page chunk approximately 8.25 kB gzip               |

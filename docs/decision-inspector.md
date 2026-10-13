@@ -1,6 +1,6 @@
-# Eligibility screening and Decision Inspector (Step 8)
+# Eligibility screening and Decision Inspector
 
-The repository had no Step 7 screening page when this step began. This change supplies the prerequisite patient selection, program selection, evaluation date, explicit screening action, and multi-program results at /eligibility, then adds the requested Decision Inspector. All policies and patient records remain fictional demonstrations. No official benefits determination is made.
+The /eligibility page provides patient and program selection, an evaluation date, explicit screening, multi-program results, and the Decision Inspector. All policies and patient records remain fictional demonstrations. No official benefits determination is made.
 
 ## Screening and engine integration
 
@@ -36,7 +36,7 @@ Unknown rules expose the engine's missing fields, affected rules/program, and a 
 
 ## Correcting income completeness
 
-The existing profile income editor now includes an unchecked-by-default confirmation: I confirm this demonstration income report is complete. Only explicitly checking it causes the existing conditional household PATCH to emit incomeInformationStatus: complete. Other source edits keep the Step 6 behavior of invalidating completeness. Confirming an empty source list represents a confirmed zero-income report. This is a synthetic completeness marker, not real income verification.
+The existing profile income editor now includes an unchecked-by-default confirmation: I confirm this demonstration income report is complete. Only explicitly checking it causes the existing conditional household PATCH to emit incomeInformationStatus: complete. Other source edits keep the existing behavior of invalidating completeness. Confirming an empty source list represents a confirmed zero-income report. This is a synthetic completeness marker, not real income verification.
 
 Profile links carry a sanitized screening return search string in router history state. Back to screening retains patient, date, selected programs, and requested inspector. Profile mutations reuse existing query invalidation, causing the retained decision to show its outdated warning until rerun.
 
@@ -62,31 +62,8 @@ npm run test:e2e
 
 Coverage reports for the screening page, components, and UI utilities are generated under ignored coverage/screening. Existing engine coverage remains separately available through npm run test:engine:coverage. Unit/integration tests cover engine-call counts, rule values/operators/references, ALL/ANY summaries, charts, immutable monetary breakdowns, updates/reruns, patient isolation, errors/retry, missing records, profile correction, keyboard selection, bounded pagination, focus restoration, and URL history. Playwright covers the full desktop/mobile workflow, native keyboard accordions, focus trapping, refresh behavior, and 320/768/1280px layouts. No brittle UI snapshots are used.
 
-## File inventory
-
-Final verification: TypeScript, ESLint, formatting, and production build passed. All 305 unit/integration tests passed across 19 files. The isolated screening coverage suite passed 38 tests with 96.53% statements, 93.48% branches, 98.66% functions, and 97.60% lines covered. Installed-Chrome Playwright passed 20 tests, with four intentional duplicate viewport skips. Desktop/mobile/320px screenshots were reviewed. All requested commands could be executed.
-
-Run instrumented coverage separately from the multiworker browser suite: simultaneous runs caused timing failures under CPU contention, while the isolated coverage run and full regression run passed.
-
-Created:
-
-- src/features/eligibility/pages/eligibility-page.tsx and eligibility-page.test.tsx.
-- src/features/eligibility/components/decision-inspector.tsx, decision-inspector.test.tsx, decision-flow.tsx, decision-status.tsx, patient-selector.tsx, and rule-comparison.tsx.
-- src/features/eligibility/ui/decision-presentation.ts, decision-presentation.test.ts, screening-session-context.ts, screening-session-provider.tsx, screening-snapshot.ts, and screening-url.ts.
-- src/app/router/eligibility-route.tsx, e2e/eligibility.spec.ts, and this guide.
-
-Modified:
-
-- src/app/router/routes.tsx and src/app/layouts/app-layout.tsx.
-- src/features/patients/pages/patient-detail-page.tsx.
-- src/features/patients/domain/profile-forms.ts and profile-forms.test.ts.
-- src/features/patients/components/profile/income-editor.tsx.
-- package.json, vite.config.ts, README.md, docs/eligibility-engine.md, and docs/patient-profile.md.
-
-The Step 6 engine, domain contracts, policy registry, mock endpoints, and query hooks are reused without modification. No dependencies were added.
-
 ## Limitations and deferred scope
 
-Only the most recent snapshot is held in the current application session; refresh clears it. Version-based freshness relies on the existing API's updatedAt contract and successful refreshes; network failures cannot establish current record freshness. Synthetic MSW data remain development/test-only and reset on reload. All policies, income completeness, and derived child conventions remain fictional.
+Only the most recent snapshot is held in the current application session; refresh clears it. Version-based freshness relies on the existing API's updatedAt contract and successful refreshes; network failures cannot establish current record freshness. Demo data reset on reload. All policies, income completeness, and derived child conventions remain fictional.
 
-Step 9 adds a temporary [What-if Simulator](what-if-simulator.md) and optional qualifying-child count metadata to screening snapshots. Policy comparison, bulk screening, persistent history, official government integrations, task management, coverage integration, authentication, and new backend services remain deferred.
+The [What-if Simulator](what-if-simulator.md) uses screening snapshots that can include qualifying-child counts. Bulk screening, persistent decision history, official government integrations, authentication, and a production backend are outside the current workflow.

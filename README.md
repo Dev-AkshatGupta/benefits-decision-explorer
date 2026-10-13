@@ -1,6 +1,6 @@
 # Benefits Decision Explorer
 
-A frontend portfolio application for fictional care coordinators to review households, screen demonstration policies, explain decisions, compare policy versions, coordinate follow-ups, and inspect recorded coverage. All eligibility calculations use a deterministic TypeScript engine; no generative AI makes decisions.
+A frontend demonstration of benefits screening and care coordination. Explore synthetic patient profiles, review fictional policies, understand screening results, and coordinate follow-up.
 
 > Benefits Decision Explorer is an independent demonstration project. It is not affiliated with ITO Health. All patient records, policies, and eligibility results are fictional and must not be used for real benefit decisions.
 
@@ -20,20 +20,21 @@ npm run build:demo
 npm run preview
 ```
 
-Open the URL printed by Vite, then start at `/patients`. The production demo starts MSW before rendering React and needs no backend. Changes exist only in the current tab and disappear on refresh. Do not enter real personal information. **Reset demo data** restores all repositories after confirmation, clears caches, and reloads to discard drafts and analysis snapshots.
+Open the URL printed by Vite and use the Dashboard to explore the workflows. The production demo starts MSW before rendering React and needs no backend. Changes exist only in the current tab and disappear on refresh. Do not enter real personal information. **Reset demo data** restores all repositories after confirmation, clears caches, and reloads to discard drafts and analysis snapshots.
 
 ## Feature status
 
-| Route                     | Implemented behavior                                                                                         |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `/patients`               | Paginated search, filters, sorting and synthetic patient summaries                                           |
-| `/patients/:patientId`    | Profile, household members/income editing, task and recorded-coverage summaries                              |
-| `/eligibility`            | Explicit screening, missing-information handling and Decision Inspector                                      |
-| `/eligibility/simulator`  | Temporary overrides and result/rule comparisons against a captured baseline; refresh requires a new baseline |
-| `/policies`               | Structural version differences, full-population analysis, all nine transitions and patient impact inspection |
-| `/tasks`                  | Creation, assignment, lifecycle changes and patient/screening/renewal linkage                                |
-| `/coverage`               | Recorded periods/events, timeline, bounded gaps, renewal stages/deadlines and reviewed follow-up tasks       |
-| `/dashboard`, `/settings` | Placeholder pages; no live dashboard widgets or settings workflow                                            |
+| Route                    | Implemented behavior                                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `/patients`              | Paginated search, filters, sorting and synthetic patient summaries                                           |
+| `/patients/:patientId`   | Profile, household members/income editing, task and recorded-coverage summaries                              |
+| `/eligibility`           | Explicit screening, missing-information handling and Decision Inspector                                      |
+| `/eligibility/simulator` | Temporary overrides and result/rule comparisons against a captured baseline; refresh requires a new baseline |
+| `/policies`              | Structural version differences, full-population analysis, all nine transitions and patient impact inspection |
+| `/tasks`                 | Creation, assignment, lifecycle changes and patient/screening/renewal linkage                                |
+| `/coverage`              | Recorded periods/events, timeline, bounded gaps, renewal stages/deadlines and reviewed follow-up tasks       |
+| `/dashboard`             | Starting page with links to the working demonstration workflows                                              |
+| `/about`                 | Data boundaries, demonstration behavior and links to key workflows                                           |
 
 Fixtures contain 150 patients, 150 households, five fictional coordinators, 250 tasks, 260 coverage periods and 378 recorded events. Eligibility, enrollment, recorded coverage, renewal stages and task completion remain separate concepts. Dates/thresholds are fictional conventions; this is not an insurance-verification or benefits-enrollment service.
 
@@ -50,12 +51,12 @@ Only exact strings `true`/`false` are accepted. Invalid values fail configuratio
 
 ## Deployment and demonstration
 
-`vercel.json` configures a Vite static deployment, `npm run build:demo`, output `dist`, SPA deep-link rewrites, root worker scope and worker cache headers. Publish at an HTTPS origin root. No hosting account, public URL or Git remote is configured in this workspace; deployment configuration and local production behavior are verified separately from live hosting.
+The source is available in the [public GitHub repository](https://github.com/Dev-AkshatGupta/benefits-decision-explorer). `vercel.json` configures a Vite static deployment, `npm run build:demo`, output `dist`, SPA deep-link rewrites, root worker scope and worker cache headers. The application has not been deployed to a public URL; local production behavior and live hosting are separate checks.
 
 - [Deployment instructions, rollback and hosted verification](docs/deployment.md)
 - [Founder demo: a reproducible 8–10 minute walkthrough](docs/founder-demo.md)
 - [Architecture and engineering tradeoffs](docs/architecture.md)
-- [Step 14 scope, safety and verification report](docs/release-readiness.md)
+- [Release scope, safety and verification report](docs/release-readiness.md)
 
 ## Verification commands
 
@@ -76,7 +77,7 @@ Playwright uses desktop and mobile Chromium. Install its browser with `npx playw
 
 `test:demo` builds the production demo and tests nested-route refreshes, the real service worker asset/API interception, all-repository reset, other-tab isolation, unsaved-draft/simulation reset, and reset-dialog accessibility. To check a published demo, set `$env:DEMO_BASE_URL='https://your-actual-demo-host.example'` (replace this placeholder) and run `npm run test:demo:remote`. Remove the variable afterward. Remote tests mutate **synthetic tab-local fixtures**; they require a visible demo environment and active worker before doing so.
 
-Focused suites: `test:engine:coverage`, `test:screening:coverage`, `test:simulator:coverage`, `test:policies:coverage`. Measurements: `bench:engine`, `bench:policies`, `bench:readiness`, `audit:bundle`, `audit:browser`. `test:watch`, `format`, and `preview` support development. Step 13 performance results remain historical measurements, not measurements of the larger standalone demo bundle.
+Focused suites: `test:engine:coverage`, `test:screening:coverage`, `test:simulator:coverage`, `test:policies:coverage`. Measurements: `bench:engine`, `bench:policies`, `bench:readiness`, `audit:bundle`, `audit:browser`. `test:watch`, `format`, and `preview` support development. Recorded performance results are historical measurements and do not describe the current standalone demo bundle.
 
 ## Technical guides
 

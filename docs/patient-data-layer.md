@@ -1,6 +1,6 @@
 # Patient data layer
 
-Step 3 defines data contracts and integration; Step 4 adds a read-only worklist, Step 5 adds profile and household editing, and Step 6 adds a separate pure TypeScript eligibility engine. All records are synthetic and every rule in this mock environment is a fictional modeling convention, not a public-benefits rule.
+The data layer supports the patient worklist, editable household profiles, and a pure TypeScript eligibility engine. All records are synthetic and every rule in this mock environment is a fictional modeling convention, not a public-benefits rule.
 
 ## Domain conventions
 
@@ -64,7 +64,7 @@ Hooks: `usePatients`, `usePatient`, `usePatientHousehold`, `useCoordinators`, `u
 
 On successful mutation, pending detail reads are canceled, detail cache receives the authoritative response, and patient lists and the related household are invalidated. Patient mutations also invalidate global summary counts. Household mutations cancel older household reads, set the authoritative household response, and invalidate the current patient detail and patient lists. Unrelated patient details and coordinator metadata are not invalidated. Mutation failures leave existing data intact. There is no optimistic update or global client store.
 
-A future backend can serve the same `/api` contract through the same origin or a proxy. Centralized Fetch code can be changed for a different base URL without rewriting feature components. MSW is enabled only in development and tests.
+A backend can serve the same `/api` contract through the same origin or a proxy. Centralized Fetch code can target a different base URL without rewriting feature components. MSW supports development and the standalone demo build; ordinary production builds expect a compatible API.
 
 ## Verification
 

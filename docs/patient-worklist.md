@@ -1,6 +1,6 @@
-# Patient worklist (Step 4)
+# Patient worklist
 
-`/patients` supports read-only patient discovery. `/patients/:patientId` now displays the full editable profile and household sections described in [the Step 5 guide](patient-profile.md). Other feature routes remain placeholders.
+`/patients` provides searchable, paginated patient discovery. `/patients/:patientId` displays the editable profile and household sections described in [the patient profile guide](patient-profile.md).
 
 ## URL state
 
@@ -30,9 +30,9 @@ Below 768px, the same query response renders patient cards and mobile sort contr
 
 ## Scope and limitations
 
-- Assigned to me uses the existing fictional Morgan Chen identity (`coordinator-001`); there is no authentication.
-- Patient creation, eligibility, tasks, and coverage workflows are deferred. Profile editing and household management are implemented in Step 5.
-- MSW remains development/test-only. Use `npm run dev` for synthetic data; production needs a compatible `/api` implementation.
+- The coordinator filter is explicitly labeled Morgan Chen; it is a synthetic fixture, not an authenticated user identity.
+- Patient creation and external data imports are outside the current workflow; profile and household editing are available from each patient record.
+- Development and the standalone demo use synthetic MSW data; ordinary production builds need a compatible `/api` implementation.
 - Detail return context uses router history state and does not accompany newly copied detail URLs.
 
 ## Verification

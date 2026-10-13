@@ -1,4 +1,4 @@
-# Coverage Timeline & Renewal Tracking — Step 12
+# Coverage timeline and renewals
 
 All coverage periods, events, coordinators and patients are fictional demonstration data. Recorded coverage is not verified insurance or enrollment, and eligibility screening never creates coverage records automatically. This independent portfolio project is not affiliated with ITO Health.
 
@@ -102,61 +102,13 @@ Create Renewal Follow-up Task works from renewal rows, coverage details and pati
 
 Coverage details link to filtered care tasks, and task details link back to source coverage. Completing a task changes only the task. Completing renewal stage changes only that stage. Neither operation extends period dates or creates enrollment.
 
-## Files created
-
-```text
-src/features/coverage/
-  domain/coverage.ts
-  domain/coverage.test.ts
-  api/coverage-api.ts
-  api/coverage-api.test.ts
-  api/coverage-queries.ts
-  components/coverage-table.tsx
-  components/coverage-timeline.tsx
-  components/coverage-details.tsx
-  components/coverage-editor.tsx
-  components/patient-coverage-section.tsx
-  components/renewal-task.tsx
-  pages/coverage-page.tsx
-  pages/coverage-page.test.tsx
-src/mocks/data/coverage.ts
-src/mocks/handlers/coverage.ts
-src/app/router/coverage-route.tsx
-e2e/coverage.spec.ts
-docs/coverage-renewals.md
-```
-
-## Files modified
-
-```text
-.gitignore
-README.md
-src/app/router/routes.tsx
-src/mocks/data/database.ts
-src/mocks/handlers/index.ts
-src/mocks/handlers/tasks.ts
-src/features/patients/api/patient-queries.ts
-src/features/patients/pages/patient-detail-page.tsx
-src/features/tasks/domain/tasks.ts
-src/features/tasks/components/task-editor.tsx
-src/features/tasks/components/task-details.tsx
-src/features/tasks/pages/tasks-page.tsx
-src/test/app.test.tsx
-e2e/smoke.spec.ts
-vite.config.ts
-```
-
-The report-output ignore is now root-anchored (`/coverage/`) so future Git/formatting does not exclude the new coverage feature directory. Existing task draft defaults accept deadlines/coordinators; its async coordinator selector remains controlled so the prefilled value displays after options load. Eligibility engine/policy definitions remain unchanged.
-
-Vitest concurrency is capped at four workers after CPU contention caused one-second asynchronous waits to fail when all suites ran concurrently. Functional assertions remain unchanged; the complete suite passes with the cap.
-
 ## Verification and limitations
 
 Use Node 24 and run `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`, `npm run format:check` and `npm run test:e2e`. On this Windows machine, browser verification uses installed Chrome with `$env:PLAYWRIGHT_CHANNEL = 'chrome'`.
 
 Tests cover date/status boundaries, open ends, termination, overlap/adjacency, bounded gaps, missing records/deadlines, calendar arithmetic, all renewal transitions, full-population aggregates, validated pagination, reference integrity, idempotency, conflicts, explicit event history, reviewed task sources and independence of task/coverage completion. UI/E2E tests cover search, sorting/pagination, timeline keyboard selection, creation/errors, stage/event updates, patient profiles, direct renewal-row task review and mobile overflow.
 
-Everything is synthetic and session-only. Reload restores fixtures. Production still does not start MSW and requires a matching API for data workflows; no backend is introduced. Real insurance verification, government enrollment, notifications, automated submissions, authentication, persistent legal audit history and generative predictions remain out of scope. Accessibility checks do not replace a full assistive-technology audit.
+Everything is synthetic and session-only. Reload restores fixtures. Development and the standalone demo start MSW; ordinary production builds require a compatible API. No backend is introduced. Real insurance verification, government enrollment, notification delivery, automated submissions, authentication and persistent audit history remain outside the scope. Accessibility checks do not replace a full assistive-technology audit.
 
 Final verification, October 9, 2026, using Node 24:
 
@@ -165,11 +117,11 @@ Final verification, October 9, 2026, using Node 24:
 | TypeScript                                      | Passed                                                                                           |
 | ESLint, zero warnings                           | Passed                                                                                           |
 | Full Vitest suite                               | 454 tests passed across 29 files                                                                 |
-| Step 12 domain/API/UI tests                     | 41 passed                                                                                        |
+| Coverage domain/API/UI tests                    | 41 passed                                                                                        |
 | Production build                                | Passed; coverage-page chunk approximately 8.22 kB gzip                                           |
 | Prettier                                        | Passed                                                                                           |
 | Full Playwright desktop/mobile regression suite | 36 passed; 4 existing duplicate viewport tests intentionally skipped                             |
 | Coverage browser journeys                       | All 4 passed; no runtime/console errors in the checked workflow                                  |
 | Visual/layout review                            | Desktop and mobile screenshots reviewed; tested flows have no document-level horizontal overflow |
 
-All requested verification commands could be executed. No package dependencies were added or upgraded. Step 12 stops at fictional coverage/renewal tracking; deferred integrations remain outside scope.
+All requested verification commands could be executed. No package dependencies were added or upgraded. Coverage and renewal records remain fictional; external integrations are outside the current scope.

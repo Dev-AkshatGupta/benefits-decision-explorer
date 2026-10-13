@@ -1,4 +1,4 @@
-# Step 13 accessibility audit
+# Accessibility review
 
 Automated audits use axe-core through pinned `@axe-core/playwright` 4.13.0 with WCAG 2 A/AA, 2.1 AA and 2.2 AA tags in installed Chrome. Viewports are 320, 375, 768, 1024 and 1440 px wide, 900 px tall, with reduced motion enabled. Baseline and final JSON retain state names, violations and incomplete rule IDs. This is an audit of tested states, not a WCAG conformance certification.
 

@@ -2,7 +2,7 @@
 
 ## Current status
 
-Vercel configuration and a production demo build are provided without a backend. Local production-preview tests verify worker/API behavior and deep-link refreshes. **No live deployment/public URL has been created or verified.** No hosting account or Git remote is configured. Do not describe local preview as hosted verification.
+Vercel configuration and a production demo build are provided without a backend. Local production-preview checks cover worker/API behavior and deep-link refreshes. **No live deployment or public URL has been verified.** Local preview does not verify hosted delivery.
 
 ## Build and inspect
 

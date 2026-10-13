@@ -1,4 +1,4 @@
-# Deterministic eligibility engine (Step 6)
+# Deterministic eligibility engine
 
 This engine evaluates **fictional demonstration policies only**. It is not suitable for real public-benefits determinations without authoritative policies, legal review, security controls, and extensive domain validation. No real government thresholds, external policy services, or AI decisions are used.
 
@@ -84,7 +84,7 @@ Household now has an optional incomeInformationStatus: complete, incomplete, or 
 
 A complete report with an explicitly present empty source array represents confirmed zero income. Missing sources, missing status, unknown status, or incomplete status never imply zero. Existing totalAnnualIncome continues to show the sum of recorded sources in the profile, even for incomplete reports; the engine exposes annualHouseholdIncomeCents as null until completeness is confirmed.
 
-Source changes automatically mark the report incomplete unless the same PATCH explicitly supplies completeness. Member-only changes preserve the status. Existing Step 5 forms do not claim to verify income and therefore cannot silently mark an edited source list complete. Step 8 adds explicit completeness confirmation in the income editor and an eligibility screening/inspector UI. The pure engine remains unchanged; see [the UI guide](decision-inspector.md).
+Source changes automatically mark the report incomplete unless the same PATCH explicitly supplies completeness. Member-only changes preserve the status. Existing profile forms do not claim to verify income and therefore cannot silently mark an edited source list complete. The income editor provides explicit completeness confirmation, and the eligibility interface includes screening and an inspector. The pure engine remains unchanged; see [the UI guide](decision-inspector.md).
 
 Annual income reuses the existing integer-cent utility: weekly × 52, biweekly × 26, monthly × 12, annually × 1. Member-reported income is descriptive and never added again. Source-to-member associations and income-per-member are not introduced because the current policies do not need them.
 
@@ -94,7 +94,7 @@ Policy version IDs are unique within a stable program ID. Registry validation re
 
 Selection returns one version per requested program. selectPoliciesForDate preserves selected ID order, or registry first-occurrence order when IDs are omitted. A missing applicable version is an explicit error; it is not silently skipped. screenPatient rejects multiple versions for the same program ID. evaluateProgram also checks the effective window for explicitly supplied versions. The published demo registry is deeply frozen; public contracts are readonly.
 
-All current demonstration programs use ALL and residency in CO, AZ, or OR as fictional supported states. Nutrition 2025 supports only CO/AZ. The engine also supports ANY through its tested decision strategy. Step 10 adds Nutrition and Family history without changing existing policies. Its explicitly counterfactual population evaluator bypasses effective-period enforcement for two selected versions at one fixed evaluation date; ordinary screening still enforces dates. See [the policy impact guide](policy-impact-analysis.md).
+All current demonstration programs use ALL and residency in CO, AZ, or OR as fictional supported states. Nutrition 2025 supports only CO/AZ. The engine also supports ANY through its tested decision strategy. Nutrition and Family History versions extend the registry while preserving existing policy identifiers. Its explicitly counterfactual population evaluator bypasses effective-period enforcement for two selected versions at one fixed evaluation date; ordinary screening still enforces dates. See [the policy impact guide](policy-impact-analysis.md).
 
 | Fictional program         | Version / effective dates   | Annual income ceiling | Other rules               |
 | ------------------------- | --------------------------- | --------------------- | ------------------------- |
@@ -155,12 +155,8 @@ V8 coverage covers eligibility engine/domain/policy runtime files and writes tex
 
 The development benchmark measures 150 patients × five programs per operation, both with existing contexts and with normalization included. It reports timings without a hardware-dependent pass/fail threshold. Evaluation is linear in selected programs and rules (set comparisons add operand-list work), with bounded schema sizes. No workers, caching, or deep cloning beyond schema-boundary parsing are added.
 
-## Files changed
+## Verification and performance
 
 Final verification on October 9, 2026: typecheck, ESLint, formatting, and the production build passed; all 266 application/engine tests passed. The isolated engine suite passed 144 tests with 98.05% statements, 98.42% branches, 98.46% functions, and 98.32% lines covered. Installed-Chrome Playwright passed 15 desktop/mobile tests with three intentional redundant viewport skips. No requested command was unavailable.
 
 An isolated local benchmark measured approximately 63.8 ms per 150-patient/five-program batch with normalized contexts and 69.3 ms including context building. These are local development measurements, not performance guarantees.
-
-Created src/features/eligibility/domain/{schemas,types}.ts; engine/{context-builder,derived-fields,errors,evaluate-program,evaluate-rule,explanations,operators,policy-selector,screen-patient,validation}.ts; policies/{demo-programs,registry}.ts; index.ts; tests/{context-builder,evaluate-program,evaluate-rule,policy-selector,rule-types,screen-patient}.test.ts; tests/helpers.ts; tests/throughput.bench.ts; vitest.engine.config.ts; and this guide.
-
-Updated patient domain schemas, synthetic fixtures, the household MSW PATCH handler, household API tests, package.json/package-lock.json, tsconfig.json, .gitignore, README.md, and patient data/profile documentation. No routes, UI components, backend service, eligibility screening page, simulation, or policy comparison UI are added.

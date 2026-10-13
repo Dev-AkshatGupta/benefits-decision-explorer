@@ -1,4 +1,4 @@
-# Step 13 testing strategy
+# Testing strategy
 
 ## Unit and integration testing
 
@@ -6,7 +6,7 @@ Vitest + React Testing Library run with strict TypeScript and an MSW Node server
 
 Pure suites cover ALL/ANY decisions, missing vs zero income, thresholds, version dates, deterministic traces, immutable simulations/reset, structured policy diffs, all nine transitions, snapshot reconciliation and coverage date/gap semantics. Task lifecycle matrices include invalid moves and due-day boundaries. MSW integration covers pagination, foreign keys, response validation, optimistic conflicts, idempotent writes and renewal-to-task linkage. UI tests cover failures/empty states, URL validation, preserving drafts, outdated analysis, inspector values and rerunning after changes.
 
-Step 13 adds permanent/transient retry tests, a real task-404 request-count check, authoritative mutation cache synchronization with unrelated-query protection, event-query dependency gating, unsaved-event navigation/cancellation, identifier tuple separation and a fake-clock search debounce regression. The latter failed against the prior implementation, then passed after switching to an effect event. No coverage-only duplicate tests were added.
+The suite covers retry classification, task not-found behavior, mutation cache synchronization, query dependency gating, unsaved-event navigation, identifier separation, and search debounce behavior.
 
 ## End-to-end tests
 

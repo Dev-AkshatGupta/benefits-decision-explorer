@@ -1,10 +1,10 @@
-# Step 14 release readiness
+# Release readiness
 
 ## Scope and starting point
 
-The supplied Step 14 attachment ends mid-sentence after the public disclaimer requirement. Work follows its available deployment/demo/reset/safety requirements and the stated documentation/founder-demo objective. No missing requirements or implementation claims are invented.
+This report records the release scope and local verification completed on October 10, 2026. Live hosting checks were not part of that verification.
 
-The initial repository verification passed: typecheck, zero-warning lint, 467 unit/integration tests across 31 files, production build, and 44 Playwright tests with four intentional duplicate-viewport skips. The actual gap was production MSW: ordinary production expected an API backend. Dashboard and Settings remain placeholders, as do header identity/notifications. These are documented rather than described as completed workflows.
+The initial repository verification passed: typecheck, zero-warning lint, 467 unit/integration tests across 31 files, production build, and 44 Playwright tests with four intentional duplicate-viewport skips. The main release gap was production MSW: ordinary production expected an API backend. The standalone demonstration build starts MSW before rendering React.
 
 ## Delivered
 
@@ -45,26 +45,8 @@ Final local verification on October 10, 2026, using Node 24 and installed Chrome
 
 The built-demo suite verifies real worker/assets and deep-link refreshes, seeded screening/simulation/population results, all-repository reset, cancellation, independent tabs, draft/snapshot discard, responsive controls and zero axe violations in the reset dialog. A regression found during verification was fixed: explicit reset confirmation now signals the application's draft guards during the reload rather than depending on event listener ordering. Ordinary unsaved-change protection remains tested and active.
 
-Coverage, deployment artifacts and test outputs are distinct from Step 13 historical performance measurements. The standalone demo deliberately includes MSW/fixtures; this release does not claim a smaller bundle or new performance benchmark. Hosted tests (`test:demo:remote`) were not executed because no actual demonstration origin/account is configured. Vercel CDN routing/header delivery cannot be claimed as verified by local preview.
-
-## File manifest
-
-Created:
-
-- `.env.demo`, `.env.example`, `vercel.json`, `playwright.demo.config.ts`
-- `src/app/demo/{demo-mode,demo-context,demo-api,reset-session}.ts`, `demo-banner.tsx`
-- `src/app/demo/{demo-mode,demo-reset}.test.ts`, `demo-banner.test.tsx`
-- `src/mocks/handlers/demo.ts`, `deployment/demo.spec.ts`, `scripts/require-demo-url.mjs`
-- `docs/{architecture,deployment,founder-demo,release-readiness}.md`
-
-Modified:
-
-- `README.md`, `.gitignore`, `package.json`, `index.html`, `tsconfig.json`
-- `vite.config.ts`, `vitest.coverage.config.ts`
-- `src/main.tsx`, `src/app/providers/app-providers.tsx`, `src/app/layouts/app-layout.tsx`
-- `src/mocks/handlers/index.ts`, `src/test/app.test.tsx`
-- Draft unload guards in `src/features/patients/pages/patient-detail-page.tsx`, `src/features/tasks/components/task-editor.tsx`, and `src/features/coverage/components/{coverage-editor,coverage-details}.tsx`
+Coverage, deployment artifacts and test outputs are distinct from earlier performance measurements. The standalone demo deliberately includes MSW/fixtures; this release does not claim a smaller bundle or new performance benchmark. Hosted tests (`test:demo:remote`) were not executed because no live demonstration URL was available. Vercel CDN routing/header delivery cannot be claimed as verified by local preview.
 
 ## Remaining limits
 
-There is no live deployment URL, configured hosting account or Git remote in this workspace. Live rewrite/header checks and hosted E2E remain to be run after publishing. Local production tests validate the built application/worker behavior, not Vercel's infrastructure. Data is lost on refresh and not shared between tabs/users; no permanent analysis/task history exists. Dashboard/Settings/authentication/enrollment/notifications/real rules are outside verified functionality. The full Step 13 accessibility report retains its assistive-technology/incomplete-rule limitations. No founder email or external communication was sent.
+There is no verified live deployment URL. Hosted rewrite/header checks and hosted E2E remain to be run after publishing. Local production tests validate the built application and worker behavior, not Vercel infrastructure. Demo data is lost on refresh and is not shared between tabs or users; persistent analysis/task history, authentication, enrollment, notification delivery, and real policy integrations are not part of this project. Accessibility automation does not replace a full assistive-technology review.

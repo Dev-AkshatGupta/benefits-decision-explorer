@@ -1,4 +1,4 @@
-# Performance baseline — Step 13
+# Performance baseline
 
 Measured 2026-10-09T17:30:33.680Z (browser) and 2026-10-09T17:33:00.236Z (computation). No product changes preceded these baseline captures; audit instrumentation and the axe development dependency were added first.
 
@@ -35,6 +35,6 @@ Production entry JavaScript: 430.86 kB raw, 134.78 kB gzip. Shared API/schema an
 
 ## Initial architecture observations
 
-Major functional routes already use lazy + Suspense with status fallbacks. Dashboard and Settings are small placeholders, appropriately eager. Server lists are paginated; full-population fetch is a dedicated bounded batch used only for explicit analysis. Local screening/simulation state is scoped; no Zustand/Redux or browser patient storage. Pure analysis already validates policies outside its loop and derives one context per patient. Existing memoization limits simulator recalculation and population sorting to changed inputs.
+Major functional routes use lazy loading with accessible status fallbacks. Server lists are paginated; full-population fetch is a dedicated bounded batch used only for explicit analysis. Local screening/simulation state is scoped; no Zustand/Redux or browser patient storage. Pure analysis validates policies outside its loop and derives one context per patient. Memoization limits simulator recalculation and population sorting to changed inputs.
 
 Potential costs to investigate: new Intl formatters for every money/date/rule display; parent callback identity resets a search timer; inconsistent read retry behavior; event requests for invalid coverage IDs. Keyboard focus restoration accepts only HTML elements despite SVG timeline buttons. No evidence supports virtualization or a worker for this dataset.

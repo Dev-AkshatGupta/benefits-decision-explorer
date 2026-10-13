@@ -42,7 +42,7 @@ Engineering point: idempotent writes, optimistic concurrency and targeted cache 
 
 Refer to measured performance/accessibility/testing reports and production-demo tests. Discuss one measured improvement and one limit instead of an unmeasured Lighthouse score. If resetting, explain that it discards all tab-local changes/traces before confirming.
 
-Dashboard/Settings, identity and notifications are placeholders. Authentication, shared persistence, official rules, enrollment and regulatory certification are not implemented. This prototype demonstrates explainability, domain integrity, accessibility, typed boundaries and reproducible testing.
+There is no authentication, shared persistence, notification delivery, official policy integration, enrollment, or regulatory certification. This prototype demonstrates explainability, domain integrity, accessibility, typed boundaries and reproducible testing.
 
 ## Production questions
 

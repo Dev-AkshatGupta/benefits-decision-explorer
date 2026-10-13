@@ -1,4 +1,4 @@
-# Step 13 performance and production audit
+# Performance and production review
 
 See [the baseline](performance-baseline.md) for the initial verification and measurement method, [measured results](performance-results.md) for every before/after median and bundle comparison, and `measurements/` for raw samples. This is a fictional portfolio frontend, not a deployed healthcare system.
 
@@ -12,7 +12,7 @@ An unstable parent `onSearch` callback restarted the 300 ms search debounce on u
 
 Read retries were inconsistent: task reads inherited a numeric retry count, while patient reads classified permanent failures. Shared retry handling now retries network/5xx failures once and stops for 4xx, invalid response contracts and cancellation. Coverage event history waits for a successful record load, preventing an extra request for an invalid ID. Static coordinator metadata stays fresh for five minutes instead of repeatedly refetching during navigation. Mutations continue to use authoritative server responses, pending guards, idempotency keys and optimistic-concurrency tokens.
 
-The shell's retry code uses lightweight error classes; Zod response-error schemas stay in the deferred API parsing module. Existing major route splitting was retained. Dashboard/Settings are tiny placeholders and do not justify additional chunks. Feature fallbacks remain accessible status text/skeletons; existing global and router error boundaries provide reload/return recovery without exposing production stack traces. A final production-preview smoke test checks startup without MSW and a useful API failure when no backend is present.
+The shell's retry code uses lightweight error classes; Zod response-error schemas stay in the deferred API parsing module. Existing major route splitting was retained. The start and information pages remain small and do not justify additional chunks. Feature fallbacks remain accessible status text/skeletons; existing global and router error boundaries provide reload/return recovery without exposing production stack traces. A final production-preview smoke test checks startup without MSW and a useful API failure when no backend is present.
 
 Coverage event drafts now survive attempted navigation and require deliberate discard. Edit/renewal task controls cannot create a second editor while an event form owns navigation protection. Error descriptions are associated with the event field and coverage notes; focus outlines cover textareas/disclosures. Coverage gap grouping uses an unambiguous patient/program tuple key; identifiers containing `|` cannot merge separate records.
 
@@ -52,34 +52,4 @@ Source inspection found no `dangerouslySetInnerHTML`, secrets, patient browser-s
 
 Development/MSW timing includes server transforms, worker startup, mock latency and Playwright overhead; five UI samples do not establish statistical significance. Formatter/engine medians are measured improvements; broader browser improvements must not be assumed. Production initial load has a final-only measurement. No Lighthouse score, DevTools flamegraph, heap snapshot or React commit profile was collected. Mobile widths and emulation are not physical-device testing. Dataset growth should trigger another profile before choosing workers/virtualization. The initial shared React/router/query/dialog bundle remains substantial, but no artificial vendor split is presented as a download reduction.
 
-Production deliberately excludes MSW and has no backend/authentication. Mock mutations are session-local; this is unsuitable for real clinical/public-benefits use. A browser/server MSW update warning appeared intermittently during disposable axe iframe/context cleanup; no application page exceptions were observed in the core journeys. Current-input validation remains distinct from an ordinary missing eligibility value; tests preserve Needs Information rather than misclassifying it as eligible/ineligible.
-
-## Step 13 file manifest
-
-Created:
-
-- `audit/{accessibility,performance,production}.spec.ts`, `audit/computation.test.ts`
-- `playwright.audit.config.ts`, `vitest.coverage.config.ts`, `vitest.performance.config.ts`
-- `scripts/{bundle-report,audit-report}.mjs`
-- `src/lib/api/{error-schema,query-retry,query-retry.test}.ts`
-- `src/features/tasks/api/task-queries.test.tsx`, `e2e/readiness.spec.ts`
-- `docs/{performance-baseline,performance-audit,performance-results,accessibility-audit,testing-strategy,coverage-results}.md`
-- `docs/measurements/`: before/after bundle, browser and computation JSON; five before/after accessibility reports; dependency audit reports; final coverage and production timing JSON
-
-Modified:
-
-- `package.json`, `package-lock.json`, `tsconfig.json`, `eslint.config.js`, `README.md`
-- `src/app/providers/app-providers.tsx`
-- `src/main.tsx`
-- `src/features/patients/domain/{dates,income}.ts`
-- `src/features/patients/components/{patient-search.tsx,patient-search.test.tsx}`
-- `src/features/patients/api/{patient-queries.ts,patients-api.test.ts}`
-- `src/features/eligibility/ui/decision-presentation.ts`
-- `src/features/policies/api/population-api.ts`, `src/features/policies/domain/population.bench.ts`
-- `src/features/coverage/api/coverage-queries.ts`
-- `src/features/coverage/domain/{coverage,coverage.test}.ts`
-- `src/features/coverage/components/{coverage-details,coverage-editor}.tsx`
-- `src/features/coverage/pages/coverage-page.test.tsx`
-- `src/features/tasks/hooks/use-dialog-focus.ts`, `src/styles/globals.css`
-
-Generated build, HTML coverage and Playwright trace/screenshot artifacts remain ignored; no new product module was added.
+Ordinary production builds exclude MSW and have no backend or authentication. The standalone demo includes session-local mock mutations and is unsuitable for real clinical or public-benefits use. A browser/server MSW update warning appeared intermittently during disposable axe iframe/context cleanup; no application page exceptions were observed in the core journeys. Current-input validation remains distinct from an ordinary missing eligibility value; tests preserve Needs Information rather than misclassifying it as eligible/ineligible.
