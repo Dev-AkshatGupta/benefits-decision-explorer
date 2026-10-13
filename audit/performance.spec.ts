@@ -22,7 +22,10 @@ test('repeatable development + MSW browser timings', async ({ browser }) => {
     const page = await context.newPage();
     await page.goto('/dashboard');
     await expect(
-      page.getByRole('heading', { level: 1, name: 'Dashboard' }),
+      page.getByRole('heading', {
+        level: 1,
+        name: 'Start with a patient or workflow',
+      }),
     ).toBeVisible();
     samples.initialLoad ??= [];
     samples.initialLoad.push(await page.evaluate(() => performance.now()));
@@ -46,7 +49,10 @@ test('repeatable development + MSW browser timings', async ({ browser }) => {
     await measure(page, 'dashboardNavigation', async () => {
       await page.getByRole('link', { name: 'Dashboard', exact: true }).click();
       await expect(
-        page.getByRole('heading', { level: 1, name: 'Dashboard' }),
+        page.getByRole('heading', {
+          level: 1,
+          name: 'Start with a patient or workflow',
+        }),
       ).toBeVisible();
     });
     await page.goto('/eligibility?patientId=patient-011&date=2026-06-15');

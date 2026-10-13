@@ -52,7 +52,10 @@ for (const width of [320, 375, 768, 1024, 1440]) {
     }
     await page.goto('/dashboard');
     await expect(
-      page.getByRole('heading', { level: 1, name: 'Dashboard' }),
+      page.getByRole('heading', {
+        level: 1,
+        name: 'Start with a patient or workflow',
+      }),
     ).toBeVisible();
     await audit('dashboard');
     if (width < 768) {
