@@ -5,13 +5,13 @@ import { navigation } from './navigation';
 import { NotFoundPage } from './not-found-page';
 import { RouteErrorPage } from './route-error-page';
 import { PatientWorklistRoute, PatientProfileRoute } from './patient-routes';
+import { PoliciesRoute } from './policies-route';
+import { TasksRoute } from './tasks-route';
+import { CoverageRoute } from './coverage-route';
 import {
   EligibilityRoute,
   EligibilitySimulatorRoute,
 } from './eligibility-route';
-import { PoliciesRoute } from './policies-route';
-import { TasksRoute } from './tasks-route';
-import { CoverageRoute } from './coverage-route';
 export const appRoutes: RouteObject[] = [
   {
     path: '/',
@@ -29,16 +29,11 @@ export const appRoutes: RouteObject[] = [
       ...navigation
         .filter(
           (page) =>
-            !(
-              [
-                '/patients',
-                '/eligibility',
-                '/eligibility/simulator',
-                '/policies',
-                '/tasks',
-                '/coverage',
-              ] as string[]
-            ).includes(page.path),
+            page.path !== '/patients' &&
+            page.path !== '/eligibility' &&
+            page.path !== '/policies' &&
+            page.path !== '/tasks' &&
+            page.path !== '/coverage',
         )
         .map((page) => ({
           path: page.path.slice(1),

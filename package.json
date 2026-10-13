@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run typecheck && vite build",
+    "build:demo": "npm run typecheck && vite build --mode demo",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
@@ -20,6 +21,8 @@
     "test:policies:coverage": "vitest run src/features/policies --coverage --coverage.include=src/features/policies/**/*.{ts,tsx} --coverage.reportsDirectory=./coverage/policies",
     "bench:engine": "vitest bench --run --config vitest.engine.config.ts",
     "test:e2e": "playwright test",
+    "test:demo": "npm run build:demo && playwright test --config playwright.demo.config.ts",
+    "test:demo:remote": "node scripts/require-demo-url.mjs && playwright test --config playwright.demo.config.ts",
     "mocks:init": "msw init public --save",
     "preview": "vite preview"
   },

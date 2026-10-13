@@ -1,3 +1,4 @@
+import { isConfirmedDemoResetNavigation } from '@/app/demo/reset-session';
 import { useCallback, useEffect, useState, useRef } from 'react';
 import {
   Link,
@@ -55,7 +56,7 @@ export function PatientDetailPage() {
   useBeforeUnload(
     useCallback(
       (event: BeforeUnloadEvent) => {
-        if (dirty || busy) {
+        if ((dirty || busy) && !isConfirmedDemoResetNavigation()) {
           event.preventDefault();
           event.returnValue = '';
         }

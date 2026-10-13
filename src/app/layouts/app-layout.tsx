@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
@@ -7,7 +7,14 @@ import { Button } from '@/components/ui/button';
 import { AppSidebar } from './app-sidebar';
 import { AppHeader } from './app-header';
 import { ScreeningSessionProvider } from '@/features/eligibility/ui/screening-session-provider';
+import { useDemoMode } from '../demo/demo-context';
+const DemoBanner = lazy(() =>
+  import('../demo/demo-banner').then((module) => ({
+    default: module.DemoBanner,
+  })),
+);
 export function AppLayout() {
+  const demoMode = useDemoMode();
   const [collapsed, setCollapsed] = useState(
     () => !window.matchMedia('(min-width: 1024px)').matches,
   );
@@ -49,6 +56,17 @@ export function AppLayout() {
             onToggle={() => setCollapsed((value) => !value)}
           />
           <div className="min-h-0 flex-1 overflow-y-auto">
+            {demoMode && (
+              <Suspense
+                fallback={
+                  <p role="status" className="px-5 py-3 text-xs">
+                    Loading demo controls…
+                  </p>
+                }
+              >
+                <DemoBanner />
+              </Suspense>
+            )}
             <main id="main-content" tabIndex={-1}>
               <ScreeningSessionProvider>
                 <Outlet />
