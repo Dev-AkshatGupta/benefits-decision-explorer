@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppProviders } from '@/app/providers/app-providers';
 import { App } from '@/app/app';
+import '@fontsource-variable/dm-sans';
 import '@/styles/globals.css';
 import { resolveDemoMode, DemoConfigurationError } from '@/app/demo/demo-mode';
 

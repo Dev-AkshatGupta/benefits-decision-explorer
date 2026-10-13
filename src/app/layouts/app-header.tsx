@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router';
 import { Button } from '@/components/ui/button';
+import { ThemeSwitcher } from '@/app/theme/theme-switcher';
 export function AppHeader({
   title,
   collapsed,
@@ -65,6 +66,7 @@ export function AppHeader({
           </ol>
         </nav>
       </div>
+      <ThemeSwitcher />
     </header>
   );
 }

@@ -4,6 +4,7 @@ import { ErrorBoundary } from '@/components/common/error-boundary';
 import { retryApiRead } from '@/lib/api/query-retry';
 import { DemoModeContext } from '../demo/demo-context';
 import { resolveDemoMode } from '../demo/demo-mode';
+import { ThemeProvider } from '../theme/theme-provider';
 export function AppProviders({
   children,
   demoMode = resolveDemoMode(
@@ -20,12 +21,14 @@ export function AppProviders({
       }),
   );
   return (
-    <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <DemoModeContext.Provider value={demoMode}>
-          {children}
-        </DemoModeContext.Provider>
-      </QueryClientProvider>
-    </ErrorBoundary>
+    <ThemeProvider>
+      <ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <DemoModeContext.Provider value={demoMode}>
+            {children}
+          </DemoModeContext.Provider>
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </ThemeProvider>
   );
 }

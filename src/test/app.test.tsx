@@ -50,13 +50,15 @@ describe('application shell', () => {
         await screen.findByRole('heading', {
           level: 1,
           name:
-            item.path === '/policies'
-              ? 'Policy Comparison & Impact Analysis'
-              : item.path === '/tasks'
-                ? 'Care Coordination Tasks'
-                : item.path === '/coverage'
-                  ? 'Coverage & Renewals'
-                  : item.title,
+            item.path === '/dashboard'
+              ? 'Start with a patient or workflow'
+              : item.path === '/policies'
+                ? 'Policy Comparison & Impact Analysis'
+                : item.path === '/tasks'
+                  ? 'Care Coordination Tasks'
+                  : item.path === '/coverage'
+                    ? 'Coverage & Renewals'
+                    : item.title,
         }),
       ).toBeVisible();
       expect(link).toHaveAttribute('aria-current', 'page');

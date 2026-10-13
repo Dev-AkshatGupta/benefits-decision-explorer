@@ -8,6 +8,19 @@
       name="description"
       content="An independent portfolio application exploring fictional healthcare benefits and care coordination."
     />
+    <script>
+      try {
+        const preference = localStorage.getItem('bde-theme') || 'system';
+        const dark =
+          preference === 'dark' ||
+          (preference === 'system' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      } catch {
+        // Start in the light theme when browser storage is unavailable.
+      }
+    </script>
     <title>Benefits Decision Explorer</title>
   </head>
   <body>

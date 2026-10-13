@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@custom-variant dark (&:where(.dark, .dark *));
 @theme inline {
   --font-sans:
-    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    'DM Sans Variable', 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -19,26 +21,47 @@
   --color-success-muted: var(--success-muted);
   --color-warning: var(--warning);
   --color-warning-muted: var(--warning-muted);
+  --color-brand-highlight: var(--brand-highlight);
   --spacing-sidebar: 16rem;
   --spacing-sidebar-collapsed: 5rem;
   --radius-md: 0.5rem;
   --radius-xl: 0.875rem;
 }
 :root {
-  --background: oklch(0.98 0.005 240);
-  --foreground: oklch(0.25 0.025 250);
-  --card: white;
-  --primary: oklch(0.4 0.065 210);
+  color-scheme: light;
+  --background: #f5f9fa;
+  --foreground: #1e3038;
+  --card: #ffffff;
+  --primary: #0b5872;
   --primary-foreground: white;
-  --muted: oklch(0.94 0.01 240);
-  --muted-foreground: oklch(0.45 0.025 250);
-  --border: oklch(0.88 0.01 240);
-  --accent: oklch(0.94 0.025 210);
-  --overlay: oklch(0.2 0.02 250);
-  --success: oklch(0.36 0.075 160);
-  --success-muted: oklch(0.95 0.025 160);
-  --warning: oklch(0.39 0.075 70);
-  --warning-muted: oklch(0.96 0.035 80);
+  --muted: #eaf0f2;
+  --muted-foreground: #50636c;
+  --border: #d5e0e4;
+  --accent: #e3f1f3;
+  --overlay: #12232c;
+  --success: #23734f;
+  --success-muted: #e5f2e9;
+  --warning: #80530d;
+  --warning-muted: #f8f0dc;
+  --brand-highlight: #48b8c8;
+}
+.dark {
+  color-scheme: dark;
+  --background: #101c22;
+  --foreground: #e5eef0;
+  --card: #18272e;
+  --primary: #78c8d4;
+  --primary-foreground: #073744;
+  --muted: #21333a;
+  --muted-foreground: #adbdc2;
+  --border: #354850;
+  --accent: #1b3942;
+  --overlay: #050b0e;
+  --success: #81cda0;
+  --success-muted: #1c3b2e;
+  --warning: #f1c16c;
+  --warning-muted: #40351f;
+  --brand-highlight: #64c8d5;
 }
 @layer base {
   * {
