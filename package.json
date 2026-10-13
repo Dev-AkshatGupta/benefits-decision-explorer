@@ -12,6 +12,9 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:engine": "vitest run --config vitest.engine.config.ts",
+    "test:engine:coverage": "vitest run --config vitest.engine.config.ts --coverage",
+    "bench:engine": "vitest bench --run --config vitest.engine.config.ts",
     "test:e2e": "playwright test",
     "mocks:init": "msw init public --save",
     "preview": "vite preview"
