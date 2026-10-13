@@ -28,6 +28,7 @@ import { readScreeningParams } from '../ui/screening-url';
 import { DecisionStatus } from '../components/decision-status';
 import { PatientSelector } from '../components/patient-selector';
 import { DecisionInspector } from '../components/decision-inspector';
+import { EligibilityFollowUp } from '@/features/tasks/components/eligibility-follow-up';
 
 const catalog = [
   ...new Map(
@@ -469,6 +470,9 @@ export function EligibilityPage() {
                     Inspect Decision
                     <span className="sr-only"> for {result.programName}</span>
                   </Button>
+                  {result.status === 'needs_information' && (
+                    <EligibilityFollowUp result={result} outdated={outdated} />
+                  )}
                 </article>
               ))}
             </div>

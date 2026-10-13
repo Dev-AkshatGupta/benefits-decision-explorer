@@ -36,6 +36,7 @@ import { IncomeEditor } from '../components/profile/income-editor';
 import { UnsavedChangesDialog } from '../components/profile/unsaved-changes-dialog';
 import { screeningReturnPath } from '@/features/eligibility/ui/screening-url';
 import { policyReturnPath } from '@/features/policies/ui/policy-url';
+import { PatientTasksSection } from '@/features/tasks/components/patient-tasks-section';
 type Editing = 'profile' | 'members' | 'income' | null;
 export function PatientDetailPage() {
   const { patientId = '' } = useParams(),
@@ -334,6 +335,11 @@ export function PatientDetailPage() {
                 coordinator={coordinatorName}
               />
             </div>
+            <PatientTasksSection
+              patientId={patientId}
+              onDirty={setDirty}
+              onBusy={setBusy}
+            />
             <p className="mt-6 text-xs leading-6 text-muted-foreground">
               Fictional patient records only. No actual public-benefits
               determinations.
