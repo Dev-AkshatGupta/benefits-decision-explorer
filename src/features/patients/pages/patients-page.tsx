@@ -15,8 +15,8 @@ import { PatientCard } from '../components/patient-card';
 import { PatientTableSkeleton } from '../components/patient-table-skeleton';
 import { PatientEmptyState } from '../components/patient-empty-state';
 import { PatientPagination } from '../components/patient-pagination';
-// Matches the fictional coordinator identity already shown in the shell.
-const currentCoordinatorId = 'coordinator-001';
+// The shortcut uses a coordinator from the synthetic fixture set.
+const demoCoordinatorId = 'coordinator-001';
 export function PatientsPage() {
   const { params, update, clear, hasFilters } = usePatientWorklistParams();
   const query = usePatients(params);
@@ -59,22 +59,20 @@ export function PatientsPage() {
         actions={
           <Button
             variant={
-              params.coordinatorId === currentCoordinatorId
-                ? 'default'
-                : 'outline'
+              params.coordinatorId === demoCoordinatorId ? 'default' : 'outline'
             }
-            aria-pressed={params.coordinatorId === currentCoordinatorId}
+            aria-pressed={params.coordinatorId === demoCoordinatorId}
             onClick={() =>
               update({
                 coordinatorId:
-                  params.coordinatorId === currentCoordinatorId
+                  params.coordinatorId === demoCoordinatorId
                     ? undefined
-                    : currentCoordinatorId,
+                    : demoCoordinatorId,
               })
             }
           >
             <UserRoundCheck size={16} aria-hidden="true" />
-            Assigned to me
+            Assigned to Morgan Chen
           </Button>
         }
       />

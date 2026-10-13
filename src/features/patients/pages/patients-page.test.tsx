@@ -200,7 +200,9 @@ describe('patient worklist', () => {
     const user = userEvent.setup();
     renderWorklist();
     await ready();
-    await user.click(screen.getByRole('button', { name: 'Assigned to me' }));
+    await user.click(
+      screen.getByRole('button', { name: 'Assigned to Morgan Chen' }),
+    );
     await ready('Showing 1–20 of 30 patients');
     expect(screen.getByLabelText('Care coordinator')).toHaveValue(
       'coordinator-001',

@@ -1,6 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import {
-  Bell,
   Menu,
   PanelLeftClose,
   PanelLeftOpen,
@@ -65,32 +64,6 @@ export function AppHeader({
             </li>
           </ol>
         </nav>
-      </div>
-      <div className="flex shrink-0 items-center gap-3 sm:gap-5">
-        <span
-          role="img"
-          aria-label="Notifications — preview only"
-          title="Notifications are not available yet"
-          className="flex size-9 items-center justify-center text-muted-foreground"
-        >
-          <Bell size={19} aria-hidden="true" />
-        </span>
-        <span className="h-8 border-l" aria-hidden="true" />
-        <div className="flex items-center gap-3">
-          <span
-            className="flex size-9 items-center justify-center rounded-full bg-accent text-xs font-semibold text-primary"
-            aria-hidden="true"
-          >
-            MC
-          </span>
-          <div className="hidden text-xs leading-5 sm:block">
-            <p className="font-semibold">Morgan Chen</p>
-            <p className="text-muted-foreground">Fictional care coordinator</p>
-          </div>
-          <span className="sr-only sm:hidden">
-            Morgan Chen, fictional care coordinator
-          </span>
-        </div>
       </div>
     </header>
   );

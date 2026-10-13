@@ -30,7 +30,10 @@ describe('application shell', () => {
   it('redirects the root to Dashboard and preserves safety context', async () => {
     const router = renderRoute();
     expect(
-      await screen.findByRole('heading', { level: 1, name: 'Dashboard' }),
+      await screen.findByRole('heading', {
+        level: 1,
+        name: 'Start with a patient or workflow',
+      }),
     ).toBeVisible();
     expect(router.state.location.pathname).toBe('/dashboard');
     expect(screen.getByRole('main')).toBeInTheDocument();
@@ -138,7 +141,10 @@ describe('application shell', () => {
     ).toBeVisible();
     await user.click(screen.getByRole('link', { name: 'Return to Dashboard' }));
     expect(
-      await screen.findByRole('heading', { level: 1, name: 'Dashboard' }),
+      await screen.findByRole('heading', {
+        level: 1,
+        name: 'Start with a patient or workflow',
+      }),
     ).toBeVisible();
   });
   it('provides a skip-to-content link as the first keyboard stop', async () => {

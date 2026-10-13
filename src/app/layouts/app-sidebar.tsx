@@ -1,4 +1,4 @@
-import { HeartPulse, ShieldCheck } from 'lucide-react';
+import { HeartPulse } from 'lucide-react';
 import { Link } from 'react-router';
 import { navigation } from '@/app/router/navigation';
 import { NavItem } from '@/components/common/nav-item';
@@ -29,7 +29,7 @@ export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
         </p>
         <ul className="space-y-1.5">
           {navigation
-            .filter((item) => item.path !== '/settings')
+            .filter((item) => item.path !== '/about')
             .map((item) => (
               <li key={item.path}>
                 <NavItem item={item} {...(onNavigate ? { onNavigate } : {})} />
@@ -39,7 +39,7 @@ export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
         <div className="my-6 border-t" />
         <ul>
           {navigation
-            .filter((item) => item.path === '/settings')
+            .filter((item) => item.path === '/about')
             .map((item) => (
               <li key={item.path}>
                 <NavItem item={item} {...(onNavigate ? { onNavigate } : {})} />
@@ -47,19 +47,6 @@ export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
             ))}
         </ul>
       </nav>
-      <div className="sidebar-label m-4 rounded-xl border bg-background p-4 text-xs leading-5 text-muted-foreground">
-        <ShieldCheck
-          size={17}
-          className="mb-2 text-primary"
-          aria-hidden="true"
-        />
-        <p className="font-medium text-foreground">Portfolio workspace</p>
-        <p>
-          Synthetic data only.
-          <br />
-          No actual benefits determinations.
-        </p>
-      </div>
     </div>
   );
 }

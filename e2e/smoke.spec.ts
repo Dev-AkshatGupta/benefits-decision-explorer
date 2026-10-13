@@ -51,7 +51,7 @@ const pages = [
   ['Policies', '/policies'],
   ['Care Tasks', '/tasks'],
   ['Coverage Timeline', '/coverage'],
-  ['Settings', '/settings'],
+  ['About this demo', '/about'],
 ] as const;
 test('responsive shell navigates without reloads or console errors', async ({
   page,
@@ -64,7 +64,10 @@ test('responsive shell navigates without reloads or console errors', async ({
   await page.goto('/');
   await expect(page).toHaveURL(/\/dashboard$/);
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Dashboard' }),
+    page.getByRole('heading', {
+      level: 1,
+      name: 'Start with a patient or workflow',
+    }),
   ).toBeVisible();
   await page.evaluate(() => {
     document.documentElement.dataset.navigationMarker = 'preserved';
@@ -99,13 +102,15 @@ test('responsive shell navigates without reloads or console errors', async ({
       page.getByRole('heading', {
         level: 1,
         name:
-          path === '/policies'
-            ? 'Policy Comparison & Impact Analysis'
-            : path === '/tasks'
-              ? 'Care Coordination Tasks'
-              : path === '/coverage'
-                ? 'Coverage & Renewals'
-                : title,
+          path === '/dashboard'
+            ? 'Start with a patient or workflow'
+            : path === '/policies'
+              ? 'Policy Comparison & Impact Analysis'
+              : path === '/tasks'
+                ? 'Care Coordination Tasks'
+                : path === '/coverage'
+                  ? 'Coverage & Renewals'
+                  : title,
       }),
     ).toBeVisible();
     if (mobile) {

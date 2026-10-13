@@ -1,7 +1,7 @@
 import { Navigate, type RouteObject } from 'react-router';
 import { AppLayout } from '@/app/layouts/app-layout';
-import { PlaceholderPage } from '@/components/common/placeholder-page';
-import { navigation } from './navigation';
+import { DashboardPage } from '@/features/dashboard/pages/dashboard-page';
+import { DemoAboutPage } from '@/features/about/pages/demo-about-page';
 import { NotFoundPage } from './not-found-page';
 import { RouteErrorPage } from './route-error-page';
 import { PatientWorklistRoute, PatientProfileRoute } from './patient-routes';
@@ -19,6 +19,9 @@ export const appRoutes: RouteObject[] = [
     ErrorBoundary: RouteErrorPage,
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
+      { path: 'dashboard', Component: DashboardPage },
+      { path: 'about', Component: DemoAboutPage },
+      { path: 'settings', element: <Navigate to="/about" replace /> },
       { path: 'patients', Component: PatientWorklistRoute },
       { path: 'patients/:patientId', Component: PatientProfileRoute },
       { path: 'eligibility', Component: EligibilityRoute },
@@ -26,19 +29,6 @@ export const appRoutes: RouteObject[] = [
       { path: 'policies', Component: PoliciesRoute },
       { path: 'tasks', Component: TasksRoute },
       { path: 'coverage', Component: CoverageRoute },
-      ...navigation
-        .filter(
-          (page) =>
-            page.path !== '/patients' &&
-            page.path !== '/eligibility' &&
-            page.path !== '/policies' &&
-            page.path !== '/tasks' &&
-            page.path !== '/coverage',
-        )
-        .map((page) => ({
-          path: page.path.slice(1),
-          element: <PlaceholderPage page={page} />,
-        })),
       { path: '*', Component: NotFoundPage },
     ],
   },

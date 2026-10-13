@@ -1,11 +1,11 @@
 import {
   LayoutDashboard,
+  Info,
   UsersRound,
   ClipboardCheck,
   FileText,
   ListTodo,
   CalendarRange,
-  Settings,
   type LucideIcon,
 } from 'lucide-react';
 export interface NavigationItem {
@@ -19,7 +19,7 @@ export const navigation: NavigationItem[] = [
     title: 'Dashboard',
     path: '/dashboard',
     description:
-      'A central view of coordination priorities, patient activity, and upcoming follow-ups.',
+      'Start a patient review or explore the demonstration workflows.',
     icon: LayoutDashboard,
   },
   {
@@ -40,7 +40,7 @@ export const navigation: NavigationItem[] = [
     title: 'Policies',
     path: '/policies',
     description:
-      'Review configurable eligibility policies and compare changes between policy versions.',
+      'Compare fictional policy versions and review their effect on synthetic records.',
     icon: FileText,
   },
   {
@@ -58,10 +58,9 @@ export const navigation: NavigationItem[] = [
     icon: CalendarRange,
   },
   {
-    title: 'Settings',
-    path: '/settings',
-    description:
-      'Configure workspace preferences for a fictional care coordination team.',
-    icon: Settings,
+    title: 'About this demo',
+    path: '/about',
+    description: 'Learn how the demonstration data and results should be used.',
+    icon: Info,
   },
 ];

@@ -39,7 +39,7 @@ test('patient worklist journey preserves URL context on desktop and mobile', asy
     .getByRole('button', { name: 'Clear filters', exact: true })
     .click();
   await expect(page.getByText('Showing 1–20 of 150 patients')).toBeVisible();
-  await page.getByRole('button', { name: 'Assigned to me' }).click();
+  await page.getByRole('button', { name: 'Assigned to Morgan Chen' }).click();
   await expect(page.getByText('Showing 1–20 of 30 patients')).toBeVisible();
   await expect(
     page.getByLabel('Care coordinator', { exact: true }),

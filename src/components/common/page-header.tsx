@@ -11,9 +11,6 @@ export function PageHeader({
   return (
     <div className="mb-8 flex flex-wrap items-start justify-between gap-5">
       <div className="min-w-0 max-w-2xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
-          Care coordination workspace
-        </p>
         <h1 className="break-words text-2xl font-semibold tracking-tight sm:text-3xl">
           {title}
         </h1>

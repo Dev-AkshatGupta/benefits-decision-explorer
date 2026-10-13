@@ -21,7 +21,10 @@ test('keyboard journey: navigation, patient search, household, screening, decisi
 }, info) => {
   await page.goto('/dashboard');
   await expect(
-    page.getByRole('heading', { name: 'Dashboard', level: 1 }),
+    page.getByRole('heading', {
+      name: 'Start with a patient or workflow',
+      level: 1,
+    }),
   ).toBeVisible();
   if (info.project.name === 'mobile-chromium')
     await page.getByRole('button', { name: 'Open navigation' }).press('Enter');
