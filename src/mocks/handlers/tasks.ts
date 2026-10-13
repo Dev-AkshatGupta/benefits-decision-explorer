@@ -33,8 +33,26 @@ function references(value: {
   )
     return 'Coordinator does not exist.';
   const source = value.source;
-  if (source?.coverageId || source?.coverageEventId)
-    return 'Coverage records are not available.';
+  if (
+    source?.coverageId &&
+    !mockDatabase.coverage.some(
+      (record) =>
+        record.id === source.coverageId &&
+        record.patientId === value.patientId &&
+        (!source.programId || source.programId === record.programId),
+    )
+  )
+    return 'Coverage source does not match an existing patient/program record.';
+  if (
+    source?.coverageEventId &&
+    !mockDatabase.coverageEvents.some(
+      (event) =>
+        event.id === source.coverageEventId &&
+        event.patientId === value.patientId &&
+        (!source.coverageId || source.coverageId === event.coverageId),
+    )
+  )
+    return 'Coverage event reference does not match this patient.';
   if (source?.patientId && source.patientId !== value.patientId)
     return 'Source patient does not match task patient.';
   if (

@@ -37,6 +37,7 @@ import { UnsavedChangesDialog } from '../components/profile/unsaved-changes-dial
 import { screeningReturnPath } from '@/features/eligibility/ui/screening-url';
 import { policyReturnPath } from '@/features/policies/ui/policy-url';
 import { PatientTasksSection } from '@/features/tasks/components/patient-tasks-section';
+import { PatientCoverageSection } from '@/features/coverage/components/patient-coverage-section';
 type Editing = 'profile' | 'members' | 'income' | null;
 export function PatientDetailPage() {
   const { patientId = '' } = useParams(),
@@ -336,6 +337,11 @@ export function PatientDetailPage() {
               />
             </div>
             <PatientTasksSection
+              patientId={patientId}
+              onDirty={setDirty}
+              onBusy={setBusy}
+            />
+            <PatientCoverageSection
               patientId={patientId}
               onDirty={setDirty}
               onBusy={setBusy}
