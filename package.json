@@ -16,6 +16,8 @@
     "test:engine:coverage": "vitest run --config vitest.engine.config.ts --coverage",
     "test:screening:coverage": "vitest run src/features/eligibility/pages src/features/eligibility/components src/features/eligibility/ui --coverage",
     "test:simulator:coverage": "vitest run src/features/eligibility/simulator --coverage --coverage.include=src/features/eligibility/simulator/**/*.{ts,tsx} --coverage.reportsDirectory=./coverage/simulator",
+    "bench:policies": "vitest bench --run --config vitest.policies.config.ts",
+    "test:policies:coverage": "vitest run src/features/policies --coverage --coverage.include=src/features/policies/**/*.{ts,tsx} --coverage.reportsDirectory=./coverage/policies",
     "bench:engine": "vitest bench --run --config vitest.engine.config.ts",
     "test:e2e": "playwright test",
     "mocks:init": "msw init public --save",

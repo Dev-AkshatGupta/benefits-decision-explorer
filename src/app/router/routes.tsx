@@ -9,6 +9,7 @@ import {
   EligibilityRoute,
   EligibilitySimulatorRoute,
 } from './eligibility-route';
+import { PoliciesRoute } from './policies-route';
 export const appRoutes: RouteObject[] = [
   {
     path: '/',
@@ -20,6 +21,7 @@ export const appRoutes: RouteObject[] = [
       { path: 'patients/:patientId', Component: PatientProfileRoute },
       { path: 'eligibility', Component: EligibilityRoute },
       { path: 'eligibility/simulator', Component: EligibilitySimulatorRoute },
+      { path: 'policies', Component: PoliciesRoute },
       ...navigation
         .filter(
           (page) =>
@@ -28,6 +30,7 @@ export const appRoutes: RouteObject[] = [
                 '/patients',
                 '/eligibility',
                 '/eligibility/simulator',
+                '/policies',
               ] as string[]
             ).includes(page.path),
         )
