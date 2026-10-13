@@ -6,6 +6,11 @@ const PatientsPage = lazy(() =>
     default: module.PatientsPage,
   })),
 );
+const PatientDetailPage = lazy(() =>
+  import('@/features/patients/pages/patient-detail-page').then((module) => ({
+    default: module.PatientDetailPage,
+  })),
+);
 export function PatientWorklistRoute() {
   return (
     <Suspense
@@ -16,6 +21,19 @@ export function PatientWorklistRoute() {
       }
     >
       <PatientsPage />
+    </Suspense>
+  );
+}
+export function PatientProfileRoute() {
+  return (
+    <Suspense
+      fallback={
+        <PageContainer>
+          <p role="status">Loading patient…</p>
+        </PageContainer>
+      }
+    >
+      <PatientDetailPage />
     </Suspense>
   );
 }

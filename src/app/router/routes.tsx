@@ -4,7 +4,7 @@ import { PlaceholderPage } from '@/components/common/placeholder-page';
 import { navigation } from './navigation';
 import { NotFoundPage } from './not-found-page';
 import { RouteErrorPage } from './route-error-page';
-import { PatientWorklistRoute } from './patient-routes';
+import { PatientWorklistRoute, PatientProfileRoute } from './patient-routes';
 export const appRoutes: RouteObject[] = [
   {
     path: '/',
@@ -13,6 +13,7 @@ export const appRoutes: RouteObject[] = [
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
       { path: 'patients', Component: PatientWorklistRoute },
+      { path: 'patients/:patientId', Component: PatientProfileRoute },
       ...navigation
         .filter((page) => !(['/patients'] as string[]).includes(page.path))
         .map((page) => ({
