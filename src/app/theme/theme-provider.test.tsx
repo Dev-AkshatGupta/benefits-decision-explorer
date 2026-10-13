@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ThemeProvider } from './theme-provider';
 import { ThemeSwitcher } from './theme-switcher';
@@ -34,24 +34,24 @@ describe('theme selection', () => {
     vi.unstubAllGlobals();
   });
 
-  it('applies and remembers a selected theme', () => {
+  it('toggles the active theme and remembers the explicit choice', () => {
     render(
       <ThemeProvider>
         <ThemeSwitcher />
       </ThemeProvider>,
     );
 
-    fireEvent.change(screen.getByRole('combobox', { name: 'Color theme' }), {
-      target: { value: 'dark' },
-    });
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Switch to dark mode' }),
+    );
 
     expect(document.documentElement).toHaveClass('dark');
     expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
     expect(localStorage.getItem('bde-theme')).toBe('dark');
 
-    fireEvent.change(screen.getByRole('combobox', { name: 'Color theme' }), {
-      target: { value: 'light' },
-    });
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Switch to light mode' }),
+    );
     expect(document.documentElement).not.toHaveClass('dark');
     expect(document.documentElement.style.colorScheme).toBe('light');
   });
@@ -64,9 +64,12 @@ describe('theme selection', () => {
     );
 
     systemPreference = true;
-    systemListener?.();
+    act(() => systemListener?.());
 
     expect(document.documentElement).toHaveClass('dark');
     expect(document.documentElement.dataset.theme).toBe('system');
+    expect(
+      screen.getByRole('button', { name: 'Switch to light mode' }),
+    ).toBeVisible();
   });
 });

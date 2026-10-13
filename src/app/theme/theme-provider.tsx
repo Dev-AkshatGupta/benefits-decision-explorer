@@ -26,6 +26,9 @@ function readPreference(): ThemePreference {
 export function ThemeProvider({ children }: PropsWithChildren) {
   const [preference, setPreferenceState] =
     useState<ThemePreference>(readPreference);
+  const [systemIsDark, setSystemIsDark] = useState(
+    () => window.matchMedia('(prefers-color-scheme: dark)').matches,
+  );
 
   const setPreference = useCallback((value: ThemePreference) => {
     setPreferenceState(value);
@@ -36,26 +39,32 @@ export function ThemeProvider({ children }: PropsWithChildren) {
     }
   }, []);
 
+  const resolvedTheme =
+    preference === 'system' ? (systemIsDark ? 'dark' : 'light') : preference;
+
+  useEffect(() => {
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const updateSystemTheme = () => setSystemIsDark(systemTheme.matches);
+    updateSystemTheme();
+    systemTheme.addEventListener('change', updateSystemTheme);
+    return () => systemTheme.removeEventListener('change', updateSystemTheme);
+  }, []);
+
   useEffect(() => {
     const root = document.documentElement;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const applyTheme = () => {
-      const isDark =
-        preference === 'dark' ||
-        (preference === 'system' && systemTheme.matches);
-      root.classList.toggle('dark', isDark);
-      root.dataset.theme = preference;
-      root.style.colorScheme = isDark ? 'dark' : 'light';
-    };
+    const isDark = resolvedTheme === 'dark';
+    root.classList.toggle('dark', isDark);
+    root.dataset.theme = preference;
+    root.style.colorScheme = resolvedTheme;
+  }, [preference, resolvedTheme]);
 
-    applyTheme();
-    systemTheme.addEventListener('change', applyTheme);
-    return () => systemTheme.removeEventListener('change', applyTheme);
-  }, [preference]);
+  const toggleTheme = useCallback(() => {
+    setPreference(resolvedTheme === 'dark' ? 'light' : 'dark');
+  }, [resolvedTheme, setPreference]);
 
   const value = useMemo(
-    () => ({ preference, setPreference }),
-    [preference, setPreference],
+    () => ({ resolvedTheme, toggleTheme }),
+    [resolvedTheme, toggleTheme],
   );
 
   return (

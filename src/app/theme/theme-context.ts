@@ -3,13 +3,13 @@ import { createContext } from 'react';
 export type ThemePreference = 'system' | 'light' | 'dark';
 
 type ThemeContextValue = {
-  preference: ThemePreference;
-  setPreference: (preference: ThemePreference) => void;
+  resolvedTheme: 'light' | 'dark';
+  toggleTheme: () => void;
 };
 
 const defaultTheme: ThemeContextValue = {
-  preference: 'system',
-  setPreference: () => undefined,
+  resolvedTheme: 'light',
+  toggleTheme: () => undefined,
 };
 
 export const ThemeContext = createContext<ThemeContextValue>(defaultTheme);

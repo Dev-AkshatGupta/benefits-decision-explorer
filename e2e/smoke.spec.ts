@@ -4,33 +4,33 @@ test('theme selection follows system preference and persists explicit choices', 
 }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('/');
-  const theme = page.getByRole('combobox', { name: 'Color theme' });
-  await expect(theme).toHaveValue('system');
+  const switchToLight = page.getByRole('button', {
+    name: 'Switch to light mode',
+  });
+  await expect(switchToLight).toBeVisible();
   await expect(page.locator('html')).toHaveClass(/dark/);
   await expect(page.locator('body')).toHaveCSS(
     'background-color',
     'rgb(16, 28, 34)',
   );
 
-  await theme.selectOption('light');
+  await switchToLight.click();
   await expect(page.locator('html')).not.toHaveClass(/dark/);
   await expect(page.locator('body')).toHaveCSS(
     'background-color',
     'rgb(245, 249, 250)',
   );
   await page.reload();
-  await expect(page.getByRole('combobox', { name: 'Color theme' })).toHaveValue(
-    'light',
-  );
+  await expect(
+    page.getByRole('button', { name: 'Switch to dark mode' }),
+  ).toBeVisible();
   await expect(page.locator('html')).not.toHaveClass(/dark/);
 
-  await page
-    .getByRole('combobox', { name: 'Color theme' })
-    .selectOption('dark');
+  await page.getByRole('button', { name: 'Switch to dark mode' }).click();
   await page.reload();
-  await expect(page.getByRole('combobox', { name: 'Color theme' })).toHaveValue(
-    'dark',
-  );
+  await expect(
+    page.getByRole('button', { name: 'Switch to light mode' }),
+  ).toBeVisible();
   await expect(page.locator('html')).toHaveClass(/dark/);
 });
 

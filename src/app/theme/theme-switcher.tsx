@@ -1,33 +1,29 @@
 import { Moon, Sun } from 'lucide-react';
-import type { ThemePreference } from './theme-context';
 import { useTheme } from './use-theme';
 
 export function ThemeSwitcher() {
-  const { preference, setPreference } = useTheme();
+  const { resolvedTheme, toggleTheme } = useTheme();
+  const nextTheme = resolvedTheme === 'dark' ? 'light' : 'dark';
 
   return (
-    <div className="flex shrink-0 items-center gap-2">
-      {preference === 'dark' ? (
-        <Moon size={17} aria-hidden="true" className="text-muted-foreground" />
-      ) : (
-        <Sun size={17} aria-hidden="true" className="text-muted-foreground" />
-      )}
-      <label htmlFor="color-theme" className="sr-only">
-        Color theme
-      </label>
-      <select
-        id="color-theme"
-        aria-label="Color theme"
-        className="form-control min-h-10 w-[6.25rem] px-2 text-xs sm:w-auto sm:min-w-28 sm:text-sm"
-        value={preference}
-        onChange={(event) =>
-          setPreference(event.target.value as ThemePreference)
-        }
+    <div className="flex shrink-0 items-center">
+      <button
+        type="button"
+        aria-label={`Switch to ${nextTheme} mode`}
+        title={`Switch to ${nextTheme} mode`}
+        onClick={toggleTheme}
+        className="inline-flex size-10 items-center justify-center rounded-lg border bg-card text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
       >
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
+        {resolvedTheme === 'dark' ? (
+          <Moon
+            size={17}
+            aria-hidden="true"
+            className="text-muted-foreground"
+          />
+        ) : (
+          <Sun size={17} aria-hidden="true" className="text-muted-foreground" />
+        )}
+      </button>
     </div>
   );
 }
