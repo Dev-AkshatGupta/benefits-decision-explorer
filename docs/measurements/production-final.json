@@ -1,0 +1,11 @@
+{
+  "measuredAt": "2026-10-09T18:05:24.247Z",
+  "mode": "Vite production preview, no MSW/backend, unthrottled, fresh contexts; API resource 404 console messages are expected and recorded separately from JavaScript errors",
+  "browser": "153.0.8010.53",
+  "samplesMs": [
+    157.39999985694885, 163, 162.10000014305115, 172.40000009536743,
+    152.39999985694885
+  ],
+  "medianMs": 162.10000014305115,
+  "expectedApi404Messages": 15
+}

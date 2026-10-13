@@ -1,0 +1,145 @@
+{
+  "measuredAt": "2026-10-09T17:28:59.741Z",
+  "assets": [
+    {
+      "name": "client-BLZK_L9L.js",
+      "bytes": 102276,
+      "gzipBytes": 29914
+    },
+    {
+      "name": "coverage-page-CpCirz7K.js",
+      "bytes": 29556,
+      "gzipBytes": 8187
+    },
+    {
+      "name": "decision-status-BEPD5a2E.js",
+      "bytes": 7861,
+      "gzipBytes": 3036
+    },
+    {
+      "name": "eligibility-page-YkBvquCK.js",
+      "bytes": 23795,
+      "gzipBytes": 6518
+    },
+    {
+      "name": "eligibility-simulator-page-DzWcCbUg.js",
+      "bytes": 17734,
+      "gzipBytes": 5328
+    },
+    {
+      "name": "index-BzwtVyZv.js",
+      "bytes": 430863,
+      "gzipBytes": 134784
+    },
+    {
+      "name": "index-DqHQHBeI.css",
+      "bytes": 29596,
+      "gzipBytes": 6154
+    },
+    {
+      "name": "patient-detail-page-CtLDyGxV.js",
+      "bytes": 31956,
+      "gzipBytes": 7825
+    },
+    {
+      "name": "patient-queries-Dpnm0NUb.js",
+      "bytes": 5498,
+      "gzipBytes": 1920
+    },
+    {
+      "name": "patient-search-DD7Osl4y.js",
+      "bytes": 1418,
+      "gzipBytes": 740
+    },
+    {
+      "name": "patient-status-badge-69wNpFLE.js",
+      "bytes": 1301,
+      "gzipBytes": 720
+    },
+    {
+      "name": "patients-page-vMKtaCDI.js",
+      "bytes": 15255,
+      "gzipBytes": 4572
+    },
+    {
+      "name": "policies-page-DbeQew3M.js",
+      "bytes": 29005,
+      "gzipBytes": 8254
+    },
+    {
+      "name": "policy-url-DscxWs7P.js",
+      "bytes": 781,
+      "gzipBytes": 425
+    },
+    {
+      "name": "profile-forms-DSkmcCxZ.js",
+      "bytes": 2971,
+      "gzipBytes": 1150
+    },
+    {
+      "name": "profile-labels-DS2RpOYm.js",
+      "bytes": 624,
+      "gzipBytes": 319
+    },
+    {
+      "name": "registry-CEfKMt8D.js",
+      "bytes": 4922,
+      "gzipBytes": 1718
+    },
+    {
+      "name": "renewal-task-D3vGz1fY.js",
+      "bytes": 8979,
+      "gzipBytes": 3152
+    },
+    {
+      "name": "rule-comparison-BErvq0Se.js",
+      "bytes": 6192,
+      "gzipBytes": 2140
+    },
+    {
+      "name": "schemas-BpDG4d3E.js",
+      "bytes": 3228,
+      "gzipBytes": 1206
+    },
+    {
+      "name": "screen-patient-ByxMRcuD.js",
+      "bytes": 327,
+      "gzipBytes": 268
+    },
+    {
+      "name": "screening-url-1HXwKZuX.js",
+      "bytes": 769,
+      "gzipBytes": 422
+    },
+    {
+      "name": "search-Cr8XdhzD.js",
+      "bytes": 203,
+      "gzipBytes": 184
+    },
+    {
+      "name": "task-editor-OLfOCnaq.js",
+      "bytes": 59857,
+      "gzipBytes": 20163
+    },
+    {
+      "name": "task-list-BUOv3Y7r.js",
+      "bytes": 8705,
+      "gzipBytes": 2855
+    },
+    {
+      "name": "tasks-page-GZmls3zg.js",
+      "bytes": 6272,
+      "gzipBytes": 2250
+    },
+    {
+      "name": "use-local-today-CPQCh4RU.js",
+      "bytes": 361,
+      "gzipBytes": 252
+    },
+    {
+      "name": "validation-BoFYv7gw.js",
+      "bytes": 800,
+      "gzipBytes": 487
+    }
+  ]
+}

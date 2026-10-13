@@ -1,3 +1,4 @@
+import { isConfirmedDemoResetNavigation } from '@/app/demo/reset-session';
 import { useState, useRef, useId } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useForm, useWatch } from 'react-hook-form';
@@ -91,7 +92,7 @@ export function CoverageEditor({
       (dirty || busy) && currentLocation.pathname !== nextLocation.pathname,
   );
   useBeforeUnload((event) => {
-    if (dirty || busy) {
+    if ((dirty || busy) && !isConfirmedDemoResetNavigation()) {
       event.preventDefault();
       event.returnValue = '';
     }

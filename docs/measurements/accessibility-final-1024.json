@@ -1,0 +1,185 @@
+{
+  "width": 1024,
+  "findings": [
+    {
+      "name": "dashboard",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "patient worklist",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "household editor",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "screening results",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["color-contrast"]
+    },
+    {
+      "name": "decision inspector",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus"]
+    },
+    {
+      "name": "simulator",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "policy matrix",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "patient impact inspector",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus"]
+    },
+    {
+      "name": "task worklist",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "task editor",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus", "color-contrast"]
+    },
+    {
+      "name": "task validation errors",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus", "color-contrast"]
+    },
+    {
+      "name": "coverage worklist",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "coverage timeline",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "coverage details",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus", "color-contrast"]
+    },
+    {
+      "name": "renewal task editor",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus", "color-contrast"]
+    },
+    {
+      "name": "event validation errors",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus", "color-contrast"]
+    },
+    {
+      "name": "unsaved event confirmation",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus", "color-contrast"]
+    },
+    {
+      "name": "coverage editor",
+      "layout": {
+        "documentOverflow": false,
+        "mainOverflow": false,
+        "dialogOverflow": false
+      },
+      "violations": [],
+      "incomplete": ["aria-hidden-focus", "color-contrast"]
+    }
+  ]
+}

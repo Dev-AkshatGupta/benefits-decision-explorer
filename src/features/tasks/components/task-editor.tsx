@@ -1,3 +1,4 @@
+import { isConfirmedDemoResetNavigation } from '@/app/demo/reset-session';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useBlocker, useBeforeUnload } from 'react-router';
@@ -356,7 +357,7 @@ export function TaskEditor({
   useBeforeUnload(
     useCallback(
       (event: BeforeUnloadEvent) => {
-        if (dirty || busy) {
+        if ((dirty || busy) && !isConfirmedDemoResetNavigation()) {
           event.preventDefault();
           event.returnValue = '';
         }

@@ -1,0 +1,3128 @@
+{
+  "total": {
+    "lines": {
+      "total": 2125,
+      "covered": 1958,
+      "skipped": 0,
+      "pct": 92.14
+    },
+    "statements": {
+      "total": 2261,
+      "covered": 2049,
+      "skipped": 0,
+      "pct": 90.62
+    },
+    "functions": {
+      "total": 872,
+      "covered": 772,
+      "skipped": 0,
+      "pct": 88.53
+    },
+    "branches": {
+      "total": 2328,
+      "covered": 2020,
+      "skipped": 0,
+      "pct": 86.76
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\main.tsx": {
+    "lines": {
+      "total": 10,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 2,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 11,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 6,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\app.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\layouts\\app-header.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\layouts\\app-layout.tsx": {
+    "lines": {
+      "total": 18,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 83.33
+    },
+    "functions": {
+      "total": 10,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 90
+    },
+    "statements": {
+      "total": 21,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 80.95
+    },
+    "branches": {
+      "total": 10,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 70
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\layouts\\app-sidebar.tsx": {
+    "lines": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\providers\\app-providers.tsx": {
+    "lines": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\coverage-route.tsx": {
+    "lines": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\eligibility-route.tsx": {
+    "lines": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\navigation.ts": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\not-found-page.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\patient-routes.tsx": {
+    "lines": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\policies-route.tsx": {
+    "lines": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\route-error-page.tsx": {
+    "lines": {
+      "total": 2,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 2,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 2,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\router.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\routes.tsx": {
+    "lines": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\app\\router\\tasks-route.tsx": {
+    "lines": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\components\\common\\error-boundary.tsx": {
+    "lines": {
+      "total": 6,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 50
+    },
+    "functions": {
+      "total": 3,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 66.66
+    },
+    "statements": {
+      "total": 6,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 50
+    },
+    "branches": {
+      "total": 2,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 50
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\components\\common\\nav-item.tsx": {
+    "lines": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\components\\common\\page-container.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\components\\common\\page-header.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\components\\common\\placeholder-page.tsx": {
+    "lines": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\components\\ui\\button.tsx": {
+    "lines": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\api\\coverage-api.ts": {
+    "lines": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 17,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 88.23
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\api\\coverage-queries.ts": {
+    "lines": {
+      "total": 40,
+      "covered": 38,
+      "skipped": 0,
+      "pct": 95
+    },
+    "functions": {
+      "total": 31,
+      "covered": 29,
+      "skipped": 0,
+      "pct": 93.54
+    },
+    "statements": {
+      "total": 40,
+      "covered": 38,
+      "skipped": 0,
+      "pct": 95
+    },
+    "branches": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\components\\coverage-details.tsx": {
+    "lines": {
+      "total": 68,
+      "covered": 53,
+      "skipped": 0,
+      "pct": 77.94
+    },
+    "functions": {
+      "total": 26,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 65.38
+    },
+    "statements": {
+      "total": 74,
+      "covered": 54,
+      "skipped": 0,
+      "pct": 72.97
+    },
+    "branches": {
+      "total": 78,
+      "covered": 45,
+      "skipped": 0,
+      "pct": 57.69
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\components\\coverage-editor.tsx": {
+    "lines": {
+      "total": 56,
+      "covered": 41,
+      "skipped": 0,
+      "pct": 73.21
+    },
+    "functions": {
+      "total": 19,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 57.89
+    },
+    "statements": {
+      "total": 64,
+      "covered": 41,
+      "skipped": 0,
+      "pct": 64.06
+    },
+    "branches": {
+      "total": 82,
+      "covered": 52,
+      "skipped": 0,
+      "pct": 63.41
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\components\\coverage-table.tsx": {
+    "lines": {
+      "total": 10,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 60
+    },
+    "functions": {
+      "total": 10,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 60
+    },
+    "statements": {
+      "total": 10,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 60
+    },
+    "branches": {
+      "total": 35,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 88.57
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\components\\coverage-timeline.tsx": {
+    "lines": {
+      "total": 35,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 88.57
+    },
+    "functions": {
+      "total": 18,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 83.33
+    },
+    "statements": {
+      "total": 35,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 88.57
+    },
+    "branches": {
+      "total": 47,
+      "covered": 35,
+      "skipped": 0,
+      "pct": 74.46
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\components\\patient-coverage-section.tsx": {
+    "lines": {
+      "total": 12,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 91.66
+    },
+    "functions": {
+      "total": 7,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 85.71
+    },
+    "statements": {
+      "total": 12,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 91.66
+    },
+    "branches": {
+      "total": 22,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 90.9
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\components\\renewal-task.tsx": {
+    "lines": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 14,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 71.42
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\domain\\coverage.ts": {
+    "lines": {
+      "total": 65,
+      "covered": 65,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 67,
+      "covered": 67,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 65,
+      "covered": 60,
+      "skipped": 0,
+      "pct": 92.3
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\coverage\\pages\\coverage-page.tsx": {
+    "lines": {
+      "total": 65,
+      "covered": 49,
+      "skipped": 0,
+      "pct": 75.38
+    },
+    "functions": {
+      "total": 37,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 56.75
+    },
+    "statements": {
+      "total": 66,
+      "covered": 50,
+      "skipped": 0,
+      "pct": 75.75
+    },
+    "branches": {
+      "total": 83,
+      "covered": 77,
+      "skipped": 0,
+      "pct": 92.77
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\index.ts": {
+    "lines": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\components\\decision-flow.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\components\\decision-inspector.tsx": {
+    "lines": {
+      "total": 15,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 11,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 16,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 29,
+      "covered": 26,
+      "skipped": 0,
+      "pct": 89.65
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\components\\decision-status.tsx": {
+    "lines": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\components\\patient-selector.tsx": {
+    "lines": {
+      "total": 31,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 37,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 50,
+      "covered": 48,
+      "skipped": 0,
+      "pct": 96
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\components\\rule-comparison.tsx": {
+    "lines": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\domain\\schemas.ts": {
+    "lines": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 23,
+      "covered": 23,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\domain\\types.ts": {
+    "lines": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\context-builder.ts": {
+    "lines": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 37,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 52,
+      "covered": 52,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\derived-fields.ts": {
+    "lines": {
+      "total": 22,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 90.9
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 28,
+      "covered": 26,
+      "skipped": 0,
+      "pct": 92.85
+    },
+    "branches": {
+      "total": 24,
+      "covered": 23,
+      "skipped": 0,
+      "pct": 95.83
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\errors.ts": {
+    "lines": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\evaluate-program.ts": {
+    "lines": {
+      "total": 20,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 20,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 25,
+      "covered": 25,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\evaluate-rule.ts": {
+    "lines": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 27,
+      "covered": 27,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\explanations.ts": {
+    "lines": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 15,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 23,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 95.65
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\operators.ts": {
+    "lines": {
+      "total": 16,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 87.5
+    },
+    "functions": {
+      "total": 7,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 85.71
+    },
+    "statements": {
+      "total": 18,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 88.88
+    },
+    "branches": {
+      "total": 21,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 95.23
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\policy-selector.ts": {
+    "lines": {
+      "total": 39,
+      "covered": 39,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 40,
+      "covered": 40,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\screen-patient.ts": {
+    "lines": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\engine\\validation.ts": {
+    "lines": {
+      "total": 23,
+      "covered": 23,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 24,
+      "covered": 23,
+      "skipped": 0,
+      "pct": 95.83
+    },
+    "branches": {
+      "total": 18,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 94.44
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\pages\\eligibility-page.tsx": {
+    "lines": {
+      "total": 84,
+      "covered": 79,
+      "skipped": 0,
+      "pct": 94.04
+    },
+    "functions": {
+      "total": 29,
+      "covered": 28,
+      "skipped": 0,
+      "pct": 96.55
+    },
+    "statements": {
+      "total": 91,
+      "covered": 84,
+      "skipped": 0,
+      "pct": 92.3
+    },
+    "branches": {
+      "total": 107,
+      "covered": 97,
+      "skipped": 0,
+      "pct": 90.65
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\policies\\demo-programs.ts": {
+    "lines": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\policies\\registry.ts": {
+    "lines": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\simulator\\components\\simulation-impact.tsx": {
+    "lines": {
+      "total": 16,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 26,
+      "covered": 24,
+      "skipped": 0,
+      "pct": 92.3
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\simulator\\components\\simulation-inputs.tsx": {
+    "lines": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 16,
+      "covered": 13,
+      "skipped": 0,
+      "pct": 81.25
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\simulator\\domain\\simulation.ts": {
+    "lines": {
+      "total": 60,
+      "covered": 59,
+      "skipped": 0,
+      "pct": 98.33
+    },
+    "functions": {
+      "total": 15,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 63,
+      "covered": 62,
+      "skipped": 0,
+      "pct": 98.41
+    },
+    "branches": {
+      "total": 75,
+      "covered": 73,
+      "skipped": 0,
+      "pct": 97.33
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\simulator\\hooks\\use-eligibility-simulation.ts": {
+    "lines": {
+      "total": 15,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\simulator\\pages\\eligibility-simulator-page.tsx": {
+    "lines": {
+      "total": 22,
+      "covered": 19,
+      "skipped": 0,
+      "pct": 86.36
+    },
+    "functions": {
+      "total": 6,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 66.66
+    },
+    "statements": {
+      "total": 23,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 86.95
+    },
+    "branches": {
+      "total": 28,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 60.71
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\tests\\helpers.ts": {
+    "lines": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\ui\\decision-presentation.ts": {
+    "lines": {
+      "total": 43,
+      "covered": 43,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 46,
+      "covered": 46,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 53,
+      "covered": 52,
+      "skipped": 0,
+      "pct": 98.11
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\ui\\screening-session-context.ts": {
+    "lines": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 5,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 80
+    },
+    "branches": {
+      "total": 2,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 50
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\ui\\screening-session-provider.tsx": {
+    "lines": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\ui\\screening-snapshot.ts": {
+    "lines": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 20,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\eligibility\\ui\\screening-url.ts": {
+    "lines": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 24,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 87.5
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\api\\patient-queries.ts": {
+    "lines": {
+      "total": 37,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 24,
+      "covered": 24,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 37,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 16,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 68.75
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\api\\patients-api.ts": {
+    "lines": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-card.tsx": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-empty-state.tsx": {
+    "lines": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-filters.tsx": {
+    "lines": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 24,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 87.5
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-metrics.tsx": {
+    "lines": {
+      "total": 5,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 80
+    },
+    "functions": {
+      "total": 3,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 66.66
+    },
+    "statements": {
+      "total": 5,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 80
+    },
+    "branches": {
+      "total": 6,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 83.33
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-pagination.tsx": {
+    "lines": {
+      "total": 8,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 87.5
+    },
+    "functions": {
+      "total": 5,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 80
+    },
+    "statements": {
+      "total": 8,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 87.5
+    },
+    "branches": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-search.tsx": {
+    "lines": {
+      "total": 15,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 20,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-status-badge.tsx": {
+    "lines": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-table-skeleton.tsx": {
+    "lines": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\patient-table.tsx": {
+    "lines": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 16,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\form-fields.tsx": {
+    "lines": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 14,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\household-view.tsx": {
+    "lines": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\income-editor.tsx": {
+    "lines": {
+      "total": 42,
+      "covered": 42,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 13,
+      "covered": 13,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 47,
+      "covered": 44,
+      "skipped": 0,
+      "pct": 93.61
+    },
+    "branches": {
+      "total": 32,
+      "covered": 26,
+      "skipped": 0,
+      "pct": 81.25
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\members-editor.tsx": {
+    "lines": {
+      "total": 36,
+      "covered": 27,
+      "skipped": 0,
+      "pct": 75
+    },
+    "functions": {
+      "total": 12,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 91.66
+    },
+    "statements": {
+      "total": 41,
+      "covered": 29,
+      "skipped": 0,
+      "pct": 70.73
+    },
+    "branches": {
+      "total": 26,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 69.23
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\profile-editor.tsx": {
+    "lines": {
+      "total": 32,
+      "covered": 32,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 11,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 37,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 91.89
+    },
+    "branches": {
+      "total": 17,
+      "covered": 13,
+      "skipped": 0,
+      "pct": 76.47
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\profile-overview.tsx": {
+    "lines": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\profile-section.tsx": {
+    "lines": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\save-feedback.tsx": {
+    "lines": {
+      "total": 8,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 87.5
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 9,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 88.88
+    },
+    "branches": {
+      "total": 14,
+      "covered": 13,
+      "skipped": 0,
+      "pct": 92.85
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\components\\profile\\unsaved-changes-dialog.tsx": {
+    "lines": {
+      "total": 12,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 91.66
+    },
+    "functions": {
+      "total": 5,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 80
+    },
+    "statements": {
+      "total": 13,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 84.61
+    },
+    "branches": {
+      "total": 8,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 62.5
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\domain\\dates.ts": {
+    "lines": {
+      "total": 21,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 95.23
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 23,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 91.3
+    },
+    "branches": {
+      "total": 26,
+      "covered": 24,
+      "skipped": 0,
+      "pct": 92.3
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\domain\\income.ts": {
+    "lines": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 17,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\domain\\patient-status.ts": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\domain\\profile-forms.ts": {
+    "lines": {
+      "total": 50,
+      "covered": 49,
+      "skipped": 0,
+      "pct": 98
+    },
+    "functions": {
+      "total": 22,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 50,
+      "covered": 49,
+      "skipped": 0,
+      "pct": 98
+    },
+    "branches": {
+      "total": 32,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 96.87
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\domain\\profile-labels.ts": {
+    "lines": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\domain\\schemas.ts": {
+    "lines": {
+      "total": 45,
+      "covered": 44,
+      "skipped": 0,
+      "pct": 97.77
+    },
+    "functions": {
+      "total": 11,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 46,
+      "covered": 45,
+      "skipped": 0,
+      "pct": 97.82
+    },
+    "branches": {
+      "total": 17,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 94.11
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\hooks\\use-patient-worklist-params.ts": {
+    "lines": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\pages\\patient-detail-page.tsx": {
+    "lines": {
+      "total": 67,
+      "covered": 59,
+      "skipped": 0,
+      "pct": 88.05
+    },
+    "functions": {
+      "total": 20,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 80
+    },
+    "statements": {
+      "total": 73,
+      "covered": 63,
+      "skipped": 0,
+      "pct": 86.3
+    },
+    "branches": {
+      "total": 95,
+      "covered": 75,
+      "skipped": 0,
+      "pct": 78.94
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\pages\\patients-page.tsx": {
+    "lines": {
+      "total": 20,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 90
+    },
+    "functions": {
+      "total": 11,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 81.81
+    },
+    "statements": {
+      "total": 20,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 90
+    },
+    "branches": {
+      "total": 46,
+      "covered": 43,
+      "skipped": 0,
+      "pct": 93.47
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\patients\\utils\\worklist-params.ts": {
+    "lines": {
+      "total": 20,
+      "covered": 19,
+      "skipped": 0,
+      "pct": 95
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 23,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 95.65
+    },
+    "branches": {
+      "total": 32,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 96.87
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\api\\population-api.ts": {
+    "lines": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 4,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 75
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\components\\patient-impact-inspector.tsx": {
+    "lines": {
+      "total": 16,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 18,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 24,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 70.83
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\components\\population-dashboard.tsx": {
+    "lines": {
+      "total": 33,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 93.93
+    },
+    "functions": {
+      "total": 24,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 91.66
+    },
+    "statements": {
+      "total": 33,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 93.93
+    },
+    "branches": {
+      "total": 39,
+      "covered": 32,
+      "skipped": 0,
+      "pct": 82.05
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\components\\rule-differences.tsx": {
+    "lines": {
+      "total": 12,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 91.66
+    },
+    "functions": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 13,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 92.3
+    },
+    "branches": {
+      "total": 40,
+      "covered": 26,
+      "skipped": 0,
+      "pct": 65
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\domain\\policy-diff.ts": {
+    "lines": {
+      "total": 30,
+      "covered": 30,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 29,
+      "covered": 29,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\domain\\population.ts": {
+    "lines": {
+      "total": 66,
+      "covered": 66,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 15,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 69,
+      "covered": 69,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 43,
+      "covered": 38,
+      "skipped": 0,
+      "pct": 88.37
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\hooks\\use-population-impact.ts": {
+    "lines": {
+      "total": 38,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 97.36
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 41,
+      "covered": 38,
+      "skipped": 0,
+      "pct": 92.68
+    },
+    "branches": {
+      "total": 14,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 64.28
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\pages\\policies-page.tsx": {
+    "lines": {
+      "total": 39,
+      "covered": 39,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 19,
+      "covered": 19,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 42,
+      "covered": 42,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 77,
+      "covered": 73,
+      "skipped": 0,
+      "pct": 94.8
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\policies\\ui\\policy-url.ts": {
+    "lines": {
+      "total": 10,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 28,
+      "covered": 26,
+      "skipped": 0,
+      "pct": 92.85
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\api\\task-queries.ts": {
+    "lines": {
+      "total": 25,
+      "covered": 24,
+      "skipped": 0,
+      "pct": 96
+    },
+    "functions": {
+      "total": 18,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 94.44
+    },
+    "statements": {
+      "total": 25,
+      "covered": 24,
+      "skipped": 0,
+      "pct": 96
+    },
+    "branches": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\api\\tasks-api.ts": {
+    "lines": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\components\\eligibility-follow-up.tsx": {
+    "lines": {
+      "total": 10,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 90
+    },
+    "functions": {
+      "total": 6,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 83.33
+    },
+    "statements": {
+      "total": 10,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 90
+    },
+    "branches": {
+      "total": 8,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 87.5
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\components\\patient-tasks-section.tsx": {
+    "lines": {
+      "total": 21,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 71.42
+    },
+    "functions": {
+      "total": 10,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 60
+    },
+    "statements": {
+      "total": 21,
+      "covered": 15,
+      "skipped": 0,
+      "pct": 71.42
+    },
+    "branches": {
+      "total": 25,
+      "covered": 24,
+      "skipped": 0,
+      "pct": 96
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\components\\task-details.tsx": {
+    "lines": {
+      "total": 48,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 77.08
+    },
+    "functions": {
+      "total": 19,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 63.15
+    },
+    "statements": {
+      "total": 51,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 72.54
+    },
+    "branches": {
+      "total": 62,
+      "covered": 46,
+      "skipped": 0,
+      "pct": 74.19
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\components\\task-editor.tsx": {
+    "lines": {
+      "total": 70,
+      "covered": 61,
+      "skipped": 0,
+      "pct": 87.14
+    },
+    "functions": {
+      "total": 27,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 81.48
+    },
+    "statements": {
+      "total": 80,
+      "covered": 65,
+      "skipped": 0,
+      "pct": 81.25
+    },
+    "branches": {
+      "total": 103,
+      "covered": 74,
+      "skipped": 0,
+      "pct": 71.84
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\components\\task-list.tsx": {
+    "lines": {
+      "total": 9,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 77.77
+    },
+    "functions": {
+      "total": 8,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 75
+    },
+    "statements": {
+      "total": 9,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 77.77
+    },
+    "branches": {
+      "total": 12,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 83.33
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\domain\\tasks.ts": {
+    "lines": {
+      "total": 35,
+      "covered": 35,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 35,
+      "covered": 35,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 32,
+      "covered": 32,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\hooks\\use-dialog-focus.ts": {
+    "lines": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 6,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 83.33
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\hooks\\use-local-today.ts": {
+    "lines": {
+      "total": 10,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 90
+    },
+    "functions": {
+      "total": 5,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 60
+    },
+    "statements": {
+      "total": 11,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 81.81
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\features\\tasks\\pages\\tasks-page.tsx": {
+    "lines": {
+      "total": 51,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 72.54
+    },
+    "functions": {
+      "total": 24,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 50
+    },
+    "statements": {
+      "total": 52,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 71.15
+    },
+    "branches": {
+      "total": 44,
+      "covered": 41,
+      "skipped": 0,
+      "pct": 93.18
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\lib\\utils.ts": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\lib\\api\\client.ts": {
+    "lines": {
+      "total": 18,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 94.44
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 19,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 94.73
+    },
+    "branches": {
+      "total": 11,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 90.9
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\lib\\api\\error-schema.ts": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\lib\\api\\errors.ts": {
+    "lines": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "C:\\Users\\gupta\\Desktop\\projects\\benefits-decision-explorer\\src\\lib\\api\\query-retry.ts": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    }
+  }
+}

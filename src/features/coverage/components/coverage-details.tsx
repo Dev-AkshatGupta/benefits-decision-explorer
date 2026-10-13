@@ -1,3 +1,4 @@
+import { isConfirmedDemoResetNavigation } from '@/app/demo/reset-session';
 import { useState, useRef, useId } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Link, useBlocker, useBeforeUnload } from 'react-router';
@@ -320,7 +321,7 @@ function EventForm({
         currentLocation.search !== nextLocation.search),
   );
   useBeforeUnload((event) => {
-    if (dirty || mutation.isPending) {
+    if ((dirty || mutation.isPending) && !isConfirmedDemoResetNavigation()) {
       event.preventDefault();
       event.returnValue = '';
     }
