@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@theme inline {
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--primary);
+  --color-accent: var(--accent);
+  --color-overlay: var(--overlay);
+  --color-success: var(--success);
+  --color-success-muted: var(--success-muted);
+  --color-warning: var(--warning);
+  --color-warning-muted: var(--warning-muted);
+  --spacing-sidebar: 16rem;
+  --spacing-sidebar-collapsed: 5rem;
+  --radius-md: 0.5rem;
+  --radius-xl: 0.875rem;
+}
+:root {
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.25 0.025 250);
+  --card: white;
+  --primary: oklch(0.4 0.065 210);
+  --primary-foreground: white;
+  --muted: oklch(0.94 0.01 240);
+  --muted-foreground: oklch(0.45 0.025 250);
+  --border: oklch(0.88 0.01 240);
+  --accent: oklch(0.94 0.025 210);
+  --overlay: oklch(0.2 0.02 250);
+  --success: oklch(0.36 0.075 160);
+  --success-muted: oklch(0.95 0.025 160);
+  --warning: oklch(0.39 0.075 70);
+  --warning-muted: oklch(0.96 0.035 80);
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background font-sans text-foreground;
+    margin: 0;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible,
+  select:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+  button:not(:disabled),
+  a {
+    cursor: pointer;
+  }
+}
+@layer components {
+  .form-control {
+    @apply min-h-11 min-w-0 rounded-lg border bg-card px-3 text-sm text-foreground;
+  }
+  .desktop-sidebar {
+    width: var(--spacing-sidebar);
+    transition: width 180ms ease;
+  }
+  .desktop-sidebar[data-collapsed='true'] {
+    width: var(--spacing-sidebar-collapsed);
+  }
+  .desktop-sidebar[data-collapsed='true'] .sidebar-label {
+    @apply sr-only;
+  }
+  .desktop-sidebar[data-collapsed='true'] .nav-item {
+    @apply justify-center px-0;
+  }
+  .desktop-sidebar[data-collapsed='true'] .brand-link {
+    @apply justify-center px-0;
+  }
+  .nav-item {
+    @apply flex min-h-11 items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground;
+  }
+  .nav-item-active {
+    @apply bg-accent text-primary hover:bg-accent hover:text-primary;
+  }
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-card focus:p-4;
+  }
+  .mobile-drawer {
+    animation: drawer-in 180ms ease-out;
+  }
+  .drawer-overlay {
+    animation: overlay-in 180ms ease-out;
+  }
+}
+@keyframes drawer-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
