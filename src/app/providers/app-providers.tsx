@@ -5,6 +5,7 @@ import { retryApiRead } from '@/lib/api/query-retry';
 import { DemoModeContext } from '../demo/demo-context';
 import { resolveDemoMode } from '../demo/demo-mode';
 import { ThemeProvider } from '../theme/theme-provider';
+import '@/lib/i18n/i18n';
 export function AppProviders({
   children,
   demoMode = resolveDemoMode(

@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { navigation } from '@/app/router/navigation';
 import { PageContainer } from '@/components/common/page-container';
 import { PageHeader } from '@/components/common/page-header';
+import { useTranslation } from 'react-i18next';
 
 const featuredPaths = [
   '/patients',
@@ -13,6 +14,7 @@ const featuredPaths = [
 ];
 
 export function DashboardPage() {
+  const { t } = useTranslation();
   const destinations = navigation.filter((item) =>
     featuredPaths.includes(item.path),
   );
@@ -20,15 +22,15 @@ export function DashboardPage() {
   return (
     <PageContainer>
       <PageHeader
-        title="Start with a patient or workflow"
-        description="Browse fictional patient records, screen a case against demonstration policies, or review follow-up and coverage information."
+        title={t('startWithPatient')}
+        description={t('dashboardIntro')}
       />
 
       <section aria-labelledby="explore-title">
         <h2 id="explore-title" className="mb-4 text-base font-semibold">
-          Choose a workflow
+          {t('chooseWorkflow')}
         </h2>
-        <nav aria-label="Explore the demonstration">
+        <nav aria-label={t('exploreDemo')}>
           <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {destinations.map((item) => {
               const Icon = item.icon;
@@ -43,7 +45,7 @@ export function DashboardPage() {
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center justify-between gap-2 font-medium text-foreground">
-                        {item.title}
+                        {t(item.titleKey)}
                         <ArrowUpRight
                           size={16}
                           className="shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
@@ -51,7 +53,7 @@ export function DashboardPage() {
                         />
                       </span>
                       <span className="mt-2 block text-sm leading-6 text-muted-foreground">
-                        {item.description}
+                        {t(item.descriptionKey)}
                       </span>
                     </span>
                   </Link>

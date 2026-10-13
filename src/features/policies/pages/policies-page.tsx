@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { PageContainer } from '@/components/common/page-container';
 import { Button } from '@/components/ui/button';
 import { demoPolicyRegistry } from '../../eligibility/policies/registry';
@@ -16,6 +17,7 @@ const programs = [
   ).entries(),
 ];
 export function PoliciesPage() {
+  const { t } = useTranslation();
   const [search, setSearch] = useSearchParams(),
     params = readPolicyParams(search);
   const versions = demoPolicyRegistry.filter(
@@ -76,25 +78,22 @@ export function PoliciesPage() {
       <div className="space-y-7">
         <header>
           <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Policy Comparison &amp; Impact Analysis
+            {t('policiesPageTitle')}
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Compare demonstration-policy versions and evaluate their impact on
-            synthetic patient populations.
+            {t('policiesPageDescription')}
           </p>
         </header>
         <p className="rounded-lg border bg-muted/40 p-4 text-xs leading-6">
-          Demonstration only. Policies, thresholds, and patient records are
-          fictional. Results do not represent actual government benefit
-          eligibility.
+          {t('policyDisclaimer')}
         </p>
         <section
-          aria-label="Policy version selection"
+          aria-label={t('policyVersionSelection')}
           className="rounded-lg border bg-card p-4 sm:p-6"
         >
           <div className="grid gap-4 lg:grid-cols-3">
             <label className="text-sm font-medium">
-              Benefit program
+              {t('benefitProgram')}
               <select
                 className={selectorClass}
                 value={params.program}
@@ -110,7 +109,7 @@ export function PoliciesPage() {
                   })
                 }
               >
-                <option value="">Select a fictional program</option>
+                <option value="">{t('selectFictionalProgram')}</option>
                 {programs.map(([id, name]) => (
                   <option value={id} key={id}>
                     {name}
@@ -121,15 +120,15 @@ export function PoliciesPage() {
             {(['baseline', 'comparison'] as const).map((side) => (
               <label className="text-sm font-medium" key={side}>
                 {side === 'baseline'
-                  ? 'Baseline policy version'
-                  : 'Comparison policy version'}
+                  ? t('baselineVersion')
+                  : t('comparisonVersion')}
                 <select
                   className={selectorClass}
                   value={params[side]}
                   disabled={analysis.busy || versions.length < 2}
                   onChange={(event) => update({ [side]: event.target.value })}
                 >
-                  <option value="">Select a version</option>
+                  <option value="">{t('selectVersion')}</option>
                   {versions.map((policy) => (
                     <option
                       key={policy.policyVersion}
@@ -145,7 +144,7 @@ export function PoliciesPage() {
           </div>
           <div className="mt-5 flex flex-wrap items-end gap-4">
             <label className="text-sm font-medium">
-              Population evaluation date
+              {t('populationEvaluationDate')}
               <input
                 type="date"
                 className={selectorClass}
@@ -172,7 +171,7 @@ export function PoliciesPage() {
                 })
               }
             >
-              Swap Versions
+              {t('swapVersions')}
             </Button>
             <Button
               id="population-analysis-action"
@@ -185,8 +184,8 @@ export function PoliciesPage() {
               }}
             >
               {analysis.busy
-                ? 'Loading population and analyzing…'
-                : 'Run Population Impact Analysis'}
+                ? t('loadingAnalyzing')
+                : t('runPopulationAnalysis')}
             </Button>
           </div>
           <p className="mt-4 text-xs leading-6 text-muted-foreground">

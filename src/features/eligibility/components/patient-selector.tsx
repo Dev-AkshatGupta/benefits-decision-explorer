@@ -2,6 +2,7 @@ import { useEffect, useState, type KeyboardEvent } from 'react';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePatients } from '../../patients/api/patient-queries';
+import { useTranslation } from 'react-i18next';
 export function PatientSelector({
   patientId,
   disabled,
@@ -11,6 +12,7 @@ export function PatientSelector({
   disabled: boolean;
   onSelect: (id: string) => void;
 }) {
+  const { t } = useTranslation();
   const [input, setInput] = useState('');
   const [query, setQuery] = useState({ search: '', page: 1 });
   useEffect(() => {
@@ -58,13 +60,13 @@ export function PatientSelector({
       className="rounded-xl border bg-card p-5 sm:p-6"
     >
       <h2 id="select-patient-title" className="text-lg font-semibold">
-        1. Select a patient
+        {t('selectPatient')}
       </h2>
       <label
         htmlFor="screening-patient-search"
         className="mb-2 mt-4 block text-sm font-medium"
       >
-        Search by patient name
+        {t('searchPatientName')}
       </label>
       <div className="relative">
         <Search
@@ -80,32 +82,34 @@ export function PatientSelector({
           onKeyDown={keys}
           maxLength={100}
           autoComplete="off"
-          placeholder="First or last name"
+          placeholder={t('firstOrLastName')}
           className="form-control w-full pl-10"
         />
       </div>
       <p role="status" className="my-3 text-xs text-muted-foreground">
         {searching
-          ? 'Searching patients…'
+          ? t('searchingPatients')
           : patients.data
-            ? `${patients.data.pagination.totalItems} matching patients. Use Tab or arrow keys to select a result.`
-            : 'Loading patients…'}
+            ? t('searchKeyboardHint', {
+                count: patients.data.pagination.totalItems,
+              })
+            : t('loadingPatients')}
       </p>
       {patients.isError ? (
         <div role="alert">
-          <p className="text-sm">Patient search could not be loaded.</p>
+          <p className="text-sm">{t('patientSearchUnavailable')}</p>
           <Button
             type="button"
             variant="outline"
             className="mt-2"
             onClick={() => void patients.refetch()}
           >
-            Retry patient search
+            {t('retryPatientSearch')}
           </Button>
         </div>
       ) : (
         <ul
-          aria-label="Patient search results"
+          aria-label={t('patientSearchResults')}
           className="max-h-64 space-y-1 overflow-y-auto"
         >
           {patients.data?.data.map((patient) => (

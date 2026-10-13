@@ -4,19 +4,21 @@ import { navigation } from '@/app/router/navigation';
 import { PageContainer } from '@/components/common/page-container';
 import { PageHeader } from '@/components/common/page-header';
 import { useDemoMode } from '@/app/demo/demo-context';
+import { useTranslation } from 'react-i18next';
 
 const links = navigation.filter((item) =>
   ['/patients', '/eligibility', '/policies'].includes(item.path),
 );
 
 export function DemoAboutPage() {
+  const { t } = useTranslation();
   const demoMode = useDemoMode();
 
   return (
     <PageContainer>
       <PageHeader
-        title="About this demo"
-        description="How fictional data, demonstration policies, and simulated results are used in this workspace."
+        title={t('aboutPageTitle')}
+        description={t('aboutDemoIntro')}
       />
 
       <div className="grid gap-4 lg:grid-cols-2">
@@ -84,9 +86,9 @@ export function DemoAboutPage() {
                 className="flex min-h-14 items-center justify-between gap-4 px-4 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring sm:px-5"
               >
                 <span>
-                  <span className="block font-medium">{item.title}</span>
+                  <span className="block font-medium">{t(item.titleKey)}</span>
                   <span className="mt-1 block leading-5 text-muted-foreground">
-                    {item.description}
+                    {t(item.descriptionKey)}
                   </span>
                 </span>
                 <ArrowRight

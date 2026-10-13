@@ -8,12 +8,14 @@ import { AppSidebar } from './app-sidebar';
 import { AppHeader } from './app-header';
 import { ScreeningSessionProvider } from '@/features/eligibility/ui/screening-session-provider';
 import { useDemoMode } from '../demo/demo-context';
+import { useTranslation } from 'react-i18next';
 const DemoBanner = lazy(() =>
   import('../demo/demo-banner').then((module) => ({
     default: module.DemoBanner,
   })),
 );
 export function AppLayout() {
+  const { t } = useTranslation();
   const demoMode = useDemoMode();
   const [collapsed, setCollapsed] = useState(
     () => !window.matchMedia('(min-width: 1024px)').matches,
@@ -22,11 +24,13 @@ export function AppLayout() {
   const { pathname } = useLocation();
   const title =
     (pathname.startsWith('/patients/')
-      ? 'Patient profile'
+      ? t('patientProfile')
       : pathname === '/eligibility/simulator'
-        ? 'What-if Simulator'
-        : navigation.find((item) => pathname === item.path)?.title) ??
-    'Page not found';
+        ? t('whatIfSimulator')
+        : (() => {
+            const item = navigation.find((entry) => pathname === entry.path);
+            return item ? t(item.titleKey) : undefined;
+          })()) ?? t('pageNotFound');
   useEffect(() => {
     const desktop = window.matchMedia('(min-width: 768px)');
     const closeDrawer = () => {
@@ -39,11 +43,11 @@ export function AppLayout() {
     <Dialog.Root open={mobileOpen} onOpenChange={setMobileOpen}>
       <div className="flex h-svh overflow-hidden">
         <a href="#main-content" className="skip-link">
-          Skip to content
+          {t('skipToContent')}
         </a>
         <aside
           id="desktop-sidebar"
-          aria-label="Application sidebar"
+          aria-label={t('applicationSidebar')}
           data-collapsed={collapsed}
           className="desktop-sidebar hidden shrink-0 border-r bg-card md:block"
         >
@@ -60,7 +64,7 @@ export function AppLayout() {
               <Suspense
                 fallback={
                   <p role="status" className="px-5 py-3 text-xs">
-                    Loading demo controls…
+                    {t('loadingDemoControls')}
                   </p>
                 }
               >
@@ -73,10 +77,7 @@ export function AppLayout() {
               </ScreeningSessionProvider>
             </main>
             <footer className="mx-auto max-w-6xl px-5 pb-6 pt-2 text-xs leading-6 text-muted-foreground sm:px-7 lg:px-10">
-              Benefits Decision Explorer is an independent demonstration
-              project. It is not affiliated with ITO Health. All patient
-              records, policies, and eligibility results are fictional and must
-              not be used for real benefit decisions.
+              {t('independentDemoFooter')}
             </footer>
           </div>
         </div>
@@ -92,15 +93,17 @@ export function AppLayout() {
             }
           }}
         >
-          <Dialog.Title className="sr-only">Workspace navigation</Dialog.Title>
+          <Dialog.Title className="sr-only">
+            {t('workspaceNavigation')}
+          </Dialog.Title>
           <Dialog.Description className="sr-only">
-            Navigate between care coordination pages.
+            {t('navigateCarePages')}
           </Dialog.Description>
           <Dialog.Close asChild>
             <Button
               variant="ghost"
               size="icon"
-              aria-label="Close navigation"
+              aria-label={t('closeNavigation')}
               className="absolute right-2 top-5"
             >
               <X size={18} aria-hidden="true" />

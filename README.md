@@ -22,6 +22,8 @@ npm run preview
 
 Open the URL printed by Vite and use the Dashboard to explore the workflows. The production demo starts MSW before rendering React and needs no backend. Changes exist only in the current tab and disappear on refresh. Do not enter real personal information. **Reset demo data** restores all repositories after confirmation, clears caches, and reloads to discard drafts and analysis snapshots.
 
+The workspace includes English and Spanish UI copy. Use the language selector in the top bar to switch languages; the choice is remembered in this browser. Patient and program names remain as entered in the synthetic fixtures.
+
 ## Feature status
 
 | Route                    | Implemented behavior                                                                                         |

@@ -8,6 +8,8 @@ import {
 import { Link } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { ThemeSwitcher } from '@/app/theme/theme-switcher';
+import { LanguageSwitcher } from '@/app/language/language-switcher';
+import { useTranslation } from 'react-i18next';
 export function AppHeader({
   title,
   collapsed,
@@ -17,6 +19,7 @@ export function AppHeader({
   collapsed: boolean;
   onToggle: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <header className="flex h-20 shrink-0 items-center justify-between gap-3 border-b bg-card px-4 sm:px-7 lg:px-10">
       <div className="flex min-w-0 items-center gap-3">
@@ -25,7 +28,7 @@ export function AppHeader({
             variant="ghost"
             size="icon"
             className="md:hidden"
-            aria-label="Open navigation"
+            aria-label={t('openNavigation')}
           >
             <Menu size={20} aria-hidden="true" />
           </Button>
@@ -35,7 +38,7 @@ export function AppHeader({
           variant="ghost"
           size="icon"
           className="hidden md:inline-flex"
-          aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          aria-label={collapsed ? t('expandSidebar') : t('collapseSidebar')}
           aria-expanded={!collapsed}
           aria-controls="desktop-sidebar"
           onClick={onToggle}
@@ -46,11 +49,11 @@ export function AppHeader({
             <PanelLeftClose size={20} aria-hidden="true" />
           )}
         </Button>
-        <nav aria-label="Breadcrumb" className="min-w-0 text-sm">
+        <nav aria-label={t('breadcrumb')} className="min-w-0 text-sm">
           <ol className="flex min-w-0 items-center gap-2">
             <li className="hidden text-muted-foreground sm:block">
               <Link to="/dashboard" className="hover:text-foreground">
-                Workspace
+                {t('workspace')}
               </Link>
             </li>
             <li className="hidden sm:block">
@@ -66,7 +69,10 @@ export function AppHeader({
           </ol>
         </nav>
       </div>
-      <ThemeSwitcher />
+      <div className="flex shrink-0 items-center gap-2">
+        <LanguageSwitcher />
+        <ThemeSwitcher />
+      </div>
     </header>
   );
 }

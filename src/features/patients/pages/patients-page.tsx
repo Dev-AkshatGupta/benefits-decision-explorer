@@ -15,9 +15,11 @@ import { PatientCard } from '../components/patient-card';
 import { PatientTableSkeleton } from '../components/patient-table-skeleton';
 import { PatientEmptyState } from '../components/patient-empty-state';
 import { PatientPagination } from '../components/patient-pagination';
+import { useTranslation } from 'react-i18next';
 // The shortcut uses a coordinator from the synthetic fixture set.
 const demoCoordinatorId = 'coordinator-001';
 export function PatientsPage() {
+  const { t } = useTranslation();
   const { params, update, clear, hasFilters } = usePatientWorklistParams();
   const query = usePatients(params);
   const pageNeedsCorrection = Boolean(
@@ -54,8 +56,8 @@ export function PatientsPage() {
   return (
     <PageContainer>
       <PageHeader
-        title="Patients"
-        description="Manage patients and coordinate benefits assistance."
+        title={t('patientsPageTitle')}
+        description={t('managePatients')}
         actions={
           <Button
             variant={
@@ -72,13 +74,13 @@ export function PatientsPage() {
             }
           >
             <UserRoundCheck size={16} aria-hidden="true" />
-            Assigned to Morgan Chen
+            {t('assignedMorgan')}
           </Button>
         }
       />
       <PatientMetrics />
       <section
-        aria-label="Patient worklist"
+        aria-label={t('patientWorklist')}
         className="overflow-hidden rounded-xl border bg-card shadow-sm"
       >
         <div className="space-y-4 p-4 sm:p-5">
@@ -92,16 +94,18 @@ export function PatientsPage() {
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-xs text-muted-foreground" role="status">
               {query.isFetching && query.data
-                ? 'Updating results…'
+                ? t('updatingResults')
                 : query.data
-                  ? query.data.pagination.totalItems + ' matching patients'
+                  ? t('matchingPatients', {
+                      count: query.data.pagination.totalItems,
+                    })
                   : query.isError
-                    ? 'Patient list unavailable'
-                    : 'Finding patients…'}
+                    ? t('patientListUnavailable')
+                    : t('findingPatients')}
             </p>
             <div className="flex items-center gap-2 md:hidden">
               <label htmlFor="mobile-sort" className="text-xs">
-                Sort by
+                {t('sortBy')}
               </label>
               <select
                 id="mobile-sort"
@@ -109,16 +113,17 @@ export function PatientsPage() {
                 value={params.sortBy}
                 onChange={(event) => sort(event.target.value as WorklistSort)}
               >
-                <option value="lastUpdated">Last updated</option>
-                <option value="fullName">Patient name</option>
-                <option value="age">Age</option>
+                <option value="lastUpdated">{t('lastUpdated')}</option>
+                <option value="fullName">{t('patientName')}</option>
+                <option value="age">{t('age')}</option>
               </select>
               <Button
                 variant="outline"
                 className="min-h-11"
                 aria-label={
-                  'Sort ' +
-                  (params.sortOrder === 'asc' ? 'descending' : 'ascending')
+                  params.sortOrder === 'asc'
+                    ? t('sortDescending')
+                    : t('sortAscending')
                 }
                 onClick={() =>
                   update({
@@ -126,23 +131,25 @@ export function PatientsPage() {
                   })
                 }
               >
-                {params.sortOrder === 'asc' ? '↑ Asc' : '↓ Desc'}
+                {params.sortOrder === 'asc'
+                  ? `↑ ${t('ascending')}`
+                  : `↓ ${t('descending')}`}
               </Button>
             </div>
           </div>
         </div>
         {query.isError && (
           <div role="alert" className="border-t p-5">
-            <h2 className="font-semibold">Unable to load patients</h2>
+            <h2 className="font-semibold">{t('unableLoadPatients')}</h2>
             <p className="my-3 text-sm text-muted-foreground">
-              Please try again. Your search and filters have been preserved.
+              {t('retrySearchPreserved')}
             </p>
             <Button
               variant="outline"
               disabled={query.isFetching}
               onClick={() => void query.refetch()}
             >
-              Retry
+              {t('retry')}
             </Button>
           </div>
         )}
@@ -158,7 +165,7 @@ export function PatientsPage() {
                 worklistSearch={search}
               />
               <ul
-                aria-label="Patient cards"
+                aria-label={t('patientCards')}
                 className="space-y-3 border-t bg-background p-3 md:hidden"
               >
                 {query.data.data.map((patient) => (
@@ -185,8 +192,7 @@ export function PatientsPage() {
         )}
       </section>
       <p className="mt-5 text-xs leading-6 text-muted-foreground">
-        Synthetic patient records only. No actual public-benefits
-        determinations.
+        {t('syntheticPatientsDisclaimer')}
       </p>
     </PageContainer>
   );

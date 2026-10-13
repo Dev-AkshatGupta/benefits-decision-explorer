@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 export interface NavigationItem {
   title: string;
+  titleKey: string;
+  descriptionKey: string;
   path: string;
   description: string;
   icon: LucideIcon;
@@ -17,6 +19,8 @@ export interface NavigationItem {
 export const navigation: NavigationItem[] = [
   {
     title: 'Dashboard',
+    titleKey: 'dashboard',
+    descriptionKey: 'dashboardDescription',
     path: '/dashboard',
     description:
       'Start a patient review or explore the demonstration workflows.',
@@ -24,6 +28,8 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Patients',
+    titleKey: 'patients',
+    descriptionKey: 'patientsDescription',
     path: '/patients',
     description:
       'Manage synthetic patient profiles, household information, and coordination details.',
@@ -31,6 +37,8 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Eligibility Screening',
+    titleKey: 'eligibilityScreening',
+    descriptionKey: 'eligibilityDescription',
     path: '/eligibility',
     description:
       'Explore fictional eligibility rules and understand the reasoning behind simulated outcomes.',
@@ -38,6 +46,8 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Policies',
+    titleKey: 'policies',
+    descriptionKey: 'policiesDescription',
     path: '/policies',
     description:
       'Compare fictional policy versions and review their effect on synthetic records.',
@@ -45,6 +55,8 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Care Tasks',
+    titleKey: 'careTasks',
+    descriptionKey: 'tasksDescription',
     path: '/tasks',
     description:
       'Organize benefit applications, follow-ups, renewals, and coordination tasks.',
@@ -52,6 +64,8 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Coverage Timeline',
+    titleKey: 'coverageTimeline',
+    descriptionKey: 'coverageDescription',
     path: '/coverage',
     description:
       'Explore coverage periods and upcoming renewals in a clear chronological view.',
@@ -59,6 +73,8 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'About this demo',
+    titleKey: 'aboutDemo',
+    descriptionKey: 'aboutDescription',
     path: '/about',
     description: 'Learn how the demonstration data and results should be used.',
     icon: Info,

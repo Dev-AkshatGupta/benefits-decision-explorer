@@ -22,12 +22,14 @@ import { CoverageTable } from '../components/coverage-table';
 import { CoverageTimeline } from '../components/coverage-timeline';
 import { CoverageDetails } from '../components/coverage-details';
 import { CoverageEditor } from '../components/coverage-editor';
+import { useTranslation } from 'react-i18next';
 const programs = [
   ...new Map(
     demoPolicyRegistry.map((program) => [program.id, program.name]),
   ).entries(),
 ];
 export function CoveragePage() {
+  const { t } = useTranslation();
   const [params, setParams] = useSearchParams(),
     today = useLocalToday(),
     [creating, setCreating] = useState(false),
@@ -153,20 +155,19 @@ export function CoveragePage() {
         <header className="flex flex-wrap justify-between gap-4">
           <div>
             <h1 className="text-2xl font-semibold sm:text-3xl">
-              Coverage &amp; Renewals
+              {t('coveragePageTitle')}
             </h1>
             <p className="mt-2 text-sm text-muted-foreground">
-              Track demonstration coverage periods, renewal deadlines, and
-              follow-up activity.
+              {t('coveragePageIntro')}
             </p>
           </div>
 
-          <Button onClick={() => setCreating(true)}>Create Coverage</Button>
+          <Button onClick={() => setCreating(true)}>
+            {t('createCoverage')}
+          </Button>
         </header>
         <p className="rounded-lg border bg-muted/40 p-4 text-xs">
-          Demonstration only. Coverage periods and patient records are
-          fictional. Screening is not confirmed coverage or enrollment. No
-          recorded coverage does not prove lack of real-world insurance.
+          {t('coverageDemoNotice')}
         </p>
         {message && <p role="status">{message}</p>}
         <p className="text-xs">

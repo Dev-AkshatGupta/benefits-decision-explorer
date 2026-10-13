@@ -29,6 +29,7 @@ import { DecisionStatus } from '../components/decision-status';
 import { PatientSelector } from '../components/patient-selector';
 import { DecisionInspector } from '../components/decision-inspector';
 import { EligibilityFollowUp } from '@/features/tasks/components/eligibility-follow-up';
+import { useTranslation } from 'react-i18next';
 
 const catalog = [
   ...new Map(
@@ -47,6 +48,7 @@ function screeningError(error: unknown): string {
   return 'Current patient information could not be loaded. Retry screening when the connection is available.';
 }
 export function EligibilityPage() {
+  const { t } = useTranslation();
   const [search, setSearch] = useSearchParams();
   const params = readScreeningParams(search);
   const selectedIds = (params.programs ?? allIds).filter((id) =>
@@ -173,12 +175,11 @@ export function EligibilityPage() {
   return (
     <PageContainer>
       <PageHeader
-        title="Eligibility Screening"
-        description="Screen patients against demonstration benefit-program policies."
+        title={t('eligibilityScreening')}
+        description={t('eligibilityDescriptionPage')}
       />
       <p className="mb-6 rounded-lg border bg-accent px-4 py-3 text-xs leading-6 text-primary">
-        Demonstration only. Results are based on fictional policies and are not
-        official benefit eligibility determinations.
+        {t('eligibilityDisclaimer')}
       </p>
       <div className="grid items-start gap-6 lg:grid-cols-2">
         <PatientSelector
@@ -191,31 +192,30 @@ export function EligibilityPage() {
           className="rounded-xl border bg-card p-5 sm:p-6"
         >
           <h2 id="screening-context-title" className="text-lg font-semibold">
-            Patient &amp; household summary
+            {t('patientHouseholdSummary')}
           </h2>
           {!params.patientId ? (
             <p className="mt-4 text-sm leading-6 text-muted-foreground">
-              Select a synthetic patient to review the information used for
-              screening.
+              {t('selectSyntheticPatient')}
             </p>
           ) : patient.isPending ? (
             <p role="status" className="mt-4 text-sm">
-              Loading selected patient…
+              {t('loadingSelectedPatient')}
             </p>
           ) : patient.isError ? (
             <div role="alert" className="mt-4 text-sm">
               <p>
                 {patient.error instanceof ApiError &&
                 patient.error.status === 404
-                  ? 'Selected patient not found.'
-                  : 'Patient information could not be loaded.'}
+                  ? t('selectedPatientNotFound')
+                  : t('patientInformationUnavailable')}
               </p>
               <Button
                 className="mt-3"
                 variant="outline"
                 onClick={() => void patient.refetch()}
               >
-                Retry selected patient
+                {t('retrySelectedPatient')}
               </Button>
             </div>
           ) : (
@@ -230,13 +230,13 @@ export function EligibilityPage() {
                 <dl className="my-5 grid gap-4 text-sm sm:grid-cols-2">
                   <div>
                     <dt className="text-xs text-muted-foreground">
-                      Date of birth
+                      {t('dateOfBirth')}
                     </dt>
                     <dd className="mt-1">{patient.data.dateOfBirth}</dd>
                   </div>
                   <div>
                     <dt className="text-xs text-muted-foreground">
-                      Household size
+                      {t('householdSize')}
                     </dt>
                     <dd className="mt-1">
                       {household.data?.householdSize ?? 'Unknown'}
@@ -244,41 +244,41 @@ export function EligibilityPage() {
                   </div>
                   <div>
                     <dt className="text-xs text-muted-foreground">
-                      Annual income available for screening
+                      {t('annualIncomeScreening')}
                     </dt>
                     <dd className="mt-1">
                       {household.data?.incomeInformationStatus === 'complete'
                         ? formatCurrency(household.data.totalAnnualIncome)
-                        : 'Unknown — income report not complete'}
+                        : t('unknownIncomeIncomplete')}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-xs text-muted-foreground">
-                      Income information
+                      {t('incomeInformation')}
                     </dt>
                     <dd className="mt-1 capitalize">
-                      {household.data?.incomeInformationStatus ?? 'Unknown'}
+                      {household.data?.incomeInformationStatus ?? t('unknown')}
                     </dd>
                   </div>
                 </dl>
                 {household.isPending && (
                   <p role="status" className="text-sm">
-                    Loading household…
+                    {t('loadingHousehold')}
                   </p>
                 )}
                 {household.isError && (
                   <div role="alert" className="mb-4 text-sm">
                     <p>
                       {householdMissing
-                        ? 'Household not found. Screening can identify the missing information.'
-                        : 'Household information could not be loaded. Retry before screening.'}
+                        ? t('householdNotFound')
+                        : t('householdUnavailable')}
                     </p>
                     <Button
                       variant="outline"
                       className="mt-2"
                       onClick={() => void household.refetch()}
                     >
-                      Retry household data
+                      {t('retryHousehold')}
                     </Button>
                   </div>
                 )}
@@ -287,7 +287,7 @@ export function EligibilityPage() {
                     to={profilePath}
                     state={{ screeningReturnSearch: search.toString() }}
                   >
-                    Review patient profile
+                    {t('reviewPatientProfile')}
                   </Link>
                 </Button>
               </>
@@ -300,14 +300,14 @@ export function EligibilityPage() {
         className="mt-6 rounded-xl border bg-card p-5 sm:p-6"
       >
         <h2 id="select-programs-title" className="text-lg font-semibold">
-          2. Choose demonstration programs
+          {t('choosePrograms')}
         </h2>
         <div className="mt-4 max-w-xs">
           <label
             htmlFor="evaluation-date"
             className="mb-2 block text-sm font-medium"
           >
-            Evaluation date
+            {t('evaluationDate')}
           </label>
           <input
             id="evaluation-date"
@@ -320,12 +320,12 @@ export function EligibilityPage() {
           />
           {!isCalendarDate(params.date) && (
             <p role="alert" className="mt-2 text-sm text-warning">
-              Choose a valid evaluation date.
+              {t('invalidEvaluationDate')}
             </p>
           )}
         </div>
         <fieldset disabled={busy} className="mt-5 grid gap-3 sm:grid-cols-2">
-          <legend className="sr-only">Programs to screen</legend>
+          <legend className="sr-only">{t('programsToScreen')}</legend>
           {catalog.map((program) => (
             <label
               key={program.id}
@@ -372,10 +372,10 @@ export function EligibilityPage() {
           >
             <ClipboardCheck size={17} aria-hidden="true" />
             {busy
-              ? 'Screening…'
+              ? t('runningScreening')
               : snapshot
-                ? 'Rerun screening'
-                : 'Run screening'}
+                ? t('rerunScreening')
+                : t('runScreening')}
           </Button>
           <p className="text-xs text-muted-foreground">
             {!params.patientId

@@ -16,7 +16,9 @@ import { useLocalToday } from '../hooks/use-local-today';
 import { TaskList } from '../components/task-list';
 import { TaskEditor } from '../components/task-editor';
 import { TaskDetails } from '../components/task-details';
+import { useTranslation } from 'react-i18next';
 export function TasksPage() {
+  const { t } = useTranslation();
   const [search, setSearch] = useSearchParams(),
     today = useLocalToday();
   const raw = Object.fromEntries(search);
@@ -81,10 +83,10 @@ export function TasksPage() {
         <header className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h1 className="text-2xl font-semibold sm:text-3xl">
-              Care Coordination Tasks
+              {t('careCoordinationTasks')}
             </h1>
             <p className="mt-2 text-sm text-muted-foreground">
-              Manage follow-ups and documentation for synthetic patients.
+              {t('manageFollowups')}
             </p>
           </div>
           <Button
@@ -93,12 +95,11 @@ export function TasksPage() {
               setMessage('');
             }}
           >
-            Create Task
+            {t('createTask')}
           </Button>
         </header>
         <p className="text-xs text-muted-foreground">
-          Demonstration only. Tasks do not send messages, change coverage, or
-          determine eligibility. Calendar date: {today} (local).
+          {t('taskDemoNotice', { date: today })}
         </p>
         {message && (
           <p role="status" className="rounded-lg border p-3 text-sm">

@@ -2,15 +2,17 @@ import { Link } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { PageContainer } from '@/components/common/page-container';
 import { PageHeader } from '@/components/common/page-header';
+import { useTranslation } from 'react-i18next';
 export function NotFoundPage() {
+  const { t } = useTranslation();
   return (
     <PageContainer>
       <PageHeader
-        title="Page not found"
-        description="The page you requested could not be found."
+        title={t('pageNotFound')}
+        description={t('requestedPageNotFound')}
       />
       <Button asChild>
-        <Link to="/dashboard">Return to Dashboard</Link>
+        <Link to="/dashboard">{t('returnDashboard')}</Link>
       </Button>
     </PageContainer>
   );
