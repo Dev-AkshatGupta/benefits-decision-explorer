@@ -2,7 +2,7 @@
 
 ## Current status
 
-Vercel configuration and a production demo build are provided without a backend. Local production-preview checks cover worker/API behavior and deep-link refreshes. **No live deployment or public URL has been verified.** Local preview does not verify hosted delivery.
+Vercel configuration and a production demo build are provided without a backend. A GitHub Actions workflow also builds and publishes the GitHub Pages project site. GitHub Pages must be enabled for Actions in repository settings before the workflow can deploy. **No live deployment or public URL has been verified.** Local checks do not verify hosted delivery.
 
 ## Build and inspect
 
@@ -20,6 +20,19 @@ npm run preview
 Output is `dist/`. Confirm `/mockServiceWorker.js` returns JavaScript, not HTML, and `/patients/patient-011` loads directly and after refresh. `npm run test:demo` automates these checks plus typed fixture mutations/reset, tab isolation, screening/simulation/policy calculations and accessible confirmation.
 
 `npm run build` intentionally produces a non-demo shell unless the flag is true. Do not upload that artifact for a backend-free demonstration. `.env.demo` sets `VITE_DEMO_MODE=true`; shell/project variables take precedence, so false overrides are rejected by the demo build. Vite embeds public configuration at build time; provider changes require rebuilding. There are no secrets to configure.
+
+## GitHub Pages
+
+The included `.github/workflows/deploy-pages.yml` builds the demo and deploys it from `main`. On the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. The workflow uses Node 24 and `npm run build:pages`; the resulting project site is mounted under `/benefits-decision-explorer/`. Router links, Vite assets, the MSW worker, and the 404 route fallback use that base path. Once Pages is enabled for Actions, pushes to `main` trigger a build and deployment.
+
+To check the same base path locally, run:
+
+```sh
+npm run build:pages
+npm run test:e2e:pages
+```
+
+The Pages smoke test uses the built app and a local static server that mimics the repository subpath and Pages' 404 document behavior. It verifies that the app starts, MSW data loads for a direct patient-profile URL, and refresh retains that route. It does not replace a live hosted check.
 
 ## Vercel
 

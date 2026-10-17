@@ -20,7 +20,10 @@ async function bootstrap() {
     await worker.start({
       onUnhandledRequest: 'bypass',
       quiet: true,
-      serviceWorker: { url: '/mockServiceWorker.js', options: { scope: '/' } },
+      serviceWorker: {
+        url: `${import.meta.env.BASE_URL}mockServiceWorker.js`,
+        options: { scope: import.meta.env.BASE_URL },
+      },
     });
   }
   const container = document.getElementById('root');

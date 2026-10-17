@@ -55,6 +55,8 @@ Only exact strings `true`/`false` are accepted. Invalid values fail configuratio
 
 The source is available in the [public GitHub repository](https://github.com/Dev-AkshatGupta/benefits-decision-explorer). `vercel.json` configures a Vite static deployment, `npm run build:demo`, output `dist`, SPA deep-link rewrites, root worker scope and worker cache headers. The application has not been deployed to a public URL; local production behavior and live hosting are separate checks.
 
+GitHub Pages is also supported through `.github/workflows/deploy-pages.yml`. For this repository's project-site URL, the workflow builds with the `/benefits-decision-explorer/` base path, includes the MSW worker and a route fallback, and publishes on pushes to `main`. Enable it once in **Settings → Pages → Build and deployment → Source → GitHub Actions**. Run `npm run build:pages` and `npm run test:e2e:pages` to check the Pages-style build locally.
+
 - [Deployment instructions, rollback and hosted verification](docs/deployment.md)
 - [Founder demo: a reproducible 8–10 minute walkthrough](docs/founder-demo.md)
 - [Architecture and engineering tradeoffs](docs/architecture.md)
