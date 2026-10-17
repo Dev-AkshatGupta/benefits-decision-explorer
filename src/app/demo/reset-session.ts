@@ -7,10 +7,15 @@ export function isConfirmedDemoResetNavigation() {
   return confirmedResetNavigation;
 }
 
+export function getDemoResetDestination(baseUrl = import.meta.env.BASE_URL) {
+  const basePath = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  return `${basePath}dashboard?demoReset=complete`;
+}
+
 /** Called only after a confirmed, successful repository reset. Reload clears local drafts/analyses. */
 export function finishDemoReset(
   client: QueryClient,
-  navigate = () => window.location.replace('/dashboard?demoReset=complete'),
+  navigate = () => window.location.replace(getDemoResetDestination()),
 ) {
   confirmedResetNavigation = true;
   const finishNavigation = () => {

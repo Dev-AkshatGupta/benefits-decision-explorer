@@ -4,8 +4,18 @@ import { mockDatabase } from '@/mocks/data/database';
 import { resetDemoData } from './demo-api';
 import {
   finishDemoReset,
+  getDemoResetDestination,
   isConfirmedDemoResetNavigation,
 } from './reset-session';
+it('builds the reset destination under the active Vite base path', () => {
+  expect(getDemoResetDestination('/')).toBe('/dashboard?demoReset=complete');
+  expect(getDemoResetDestination('/benefits-decision-explorer/')).toBe(
+    '/benefits-decision-explorer/dashboard?demoReset=complete',
+  );
+  expect(getDemoResetDestination('/benefits-decision-explorer')).toBe(
+    '/benefits-decision-explorer/dashboard?demoReset=complete',
+  );
+});
 it('restores every repository, including request-deduplication maps, deterministically', async () => {
   const before = structuredClone(mockDatabase);
   mockDatabase.patients[0]!.firstName = 'Changed';
